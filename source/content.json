@@ -1,0 +1,1410 @@
+{
+  "source": "https://sites.google.com/view/guoleizhongshomepage/home",
+  "retrieved": "2026-09-26",
+  "profile": {
+    "name": "Guolei Zhong",
+    "displayName": "Guolei ZHONG",
+    "chineseName": "仲国磊",
+    "position": "Research Professor",
+    "institution": "East China Normal University",
+    "school": "School of Mathematical Sciences",
+    "since": "March 2026",
+    "researchInterest": "Complex algebraic geometry and its interaction with dynamics.",
+    "bio": [
+      "I am currently a research professor at School of Mathematical Sciences of East China Normal University (since March 2026).",
+      "I was a Senior Researcher at Center for Complex Geometry of Institute for Basic Science (IBS-CCG) in the Republic of Korea from December 2024 to February 2026. Before that, I was a Postdoctoral Research Fellow there from January 2022 to November 2024.",
+      "I received my Ph.D. from National University of Singapore under the supervision of De-Qi Zhang in October 2021. Prior to that, I got my B.Sc. from East China Normal University in June 2017.",
+      "I am working on complex algebraic geometry and its interaction with dynamics."
+    ],
+    "emails": [
+      "glzhong@math.ecnu.edu.cn",
+      "zhongguolei@u.nus.edu"
+    ],
+    "phone": "+86 021-54342646-621",
+    "address": "Room 221, Stat. Building, 500 Dongchuan Road, Minhang District, Shanghai, China.",
+    "cv": "https://drive.google.com/file/d/1513HYGd_Lk2NossJaoInV2qq6VvvtfrM/view?usp=drivesdk",
+    "portrait": "https://sites.google.com/sitesv-images-rt/AMxu72ucZiMYUsSBSO-GC3GTD6ekIx8lao8nVrHrjQv4VOvgIdsbjMJgOV4cFjIDB9_H8P29ZdQ_TxGdb9M9GnhI5Xnquv7Om03ZCrVouubOYIbo6Aah_YfStnJALq_Ff_6z7k7vXbVp2M29__TJrmYFRRBgLVm1IXxMGAd-f8kc2h7Hvs_T_0B7u40mD2HKJo3AQX5sQyRETeS9p9uvrz5Btf7wUFMQDs5bjjQJki9heS4=w1280",
+    "portraitCredit": "The photo was taken by Jialu Wang on Mount Huangshan (China) on 28 March 2026.",
+    "profiles": [
+      {
+        "label": "MathSciNet",
+        "url": "http://mathscinet.ams.org/mathscinet/search/author.html?mrauthid=1426742"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=zZygrjsAAAAJ&msclkid=a5af8586bc5b11ec999f069a66265ff9"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/a/0000-0001-7792-9529.html"
+      },
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0001-7792-9529"
+      },
+      {
+        "label": "Researchgate",
+        "url": "https://www.researchgate.net/profile/Zhong-Guolei"
+      },
+      {
+        "label": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/author/Guolei-Zhong/2268674154"
+      },
+      {
+        "label": "Mathematical Genealogy Project",
+        "url": "https://www.mathgenealogy.org/id.php?id=285635"
+      }
+    ],
+    "institutionLinks": [
+      {
+        "label": "School of Mathematical Sciences",
+        "url": "https://math.ecnu.edu.cn/en/"
+      },
+      {
+        "label": "East China Normal University",
+        "url": "http://english.ecnu.edu.cn"
+      },
+      {
+        "label": "Center for Complex Geometry",
+        "url": "https://ccg.ibs.re.kr"
+      },
+      {
+        "label": "Institute for Basic Science",
+        "url": "https://www.ibs.re.kr/eng.do"
+      },
+      {
+        "label": "National University of Singapore",
+        "url": "https://www.nus.edu.sg"
+      },
+      {
+        "label": "De-Qi Zhang",
+        "url": "https://blog.nus.edu.sg/matzdq/"
+      }
+    ]
+  },
+  "publications": [
+    {
+      "id": "paper-01",
+      "sourceOrder": 1,
+      "title": "Holomorphic symplectic geometry of elliptic surfaces",
+      "coauthors": "Jun-Muk Hwang",
+      "appendixBy": null,
+      "citation": "Journal of Algebraic Geometry (to appear).",
+      "year": null,
+      "status": "accepted",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2607.10375"
+        }
+      ],
+      "sourceText": "(with Jun-Muk Hwang) Holomorphic symplectic geometry of elliptic surfaces, Journal of Algebraic Geometry (to appear). [arXiv]"
+    },
+    {
+      "id": "paper-02",
+      "sourceOrder": 2,
+      "title": "Positivity of tangent sheaves of projective varieties -- the structure of MRC fibrations",
+      "coauthors": "Masataka Iwai and Shin-ichi Matsumura",
+      "appendixBy": null,
+      "citation": "Algebraic Geometry (to appear).",
+      "year": null,
+      "status": "accepted",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2309.09489"
+        }
+      ],
+      "sourceText": "(with Masataka Iwai and Shin-ichi Matsumura) Positivity of tangent sheaves of projective varieties -- the structure of MRC fibrations, Algebraic Geometry (to appear). [arXiv]"
+    },
+    {
+      "id": "paper-03",
+      "sourceOrder": 3,
+      "title": "On smooth rationally connected projective threefolds of Picard number two admitting int-amplified endomorphisms",
+      "coauthors": "Zelong Chen and Sheng Meng",
+      "appendixBy": null,
+      "citation": "Journal of the LMS (2), 114 (2026), no. 1, Paper No. e70646.",
+      "year": 2026,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://doi.org/10.1112/jlms.70646"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2506.14274"
+        }
+      ],
+      "sourceText": "(with Zelong Chen and Sheng Meng) On smooth rationally connected projective threefolds of Picard number two admitting int-amplified endomorphisms, Journal of the LMS (2), 114 (2026), no. 1, Paper No. e70646. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-04",
+      "sourceOrder": 4,
+      "title": "Periodic points for meromorphic self-maps of Fujiki varieties",
+      "coauthors": "Tien-Cuong Dinh",
+      "appendixBy": null,
+      "citation": "Indiana University Mathematics Journal, 74 (2025), no. 6, pp. 1561-1587.",
+      "year": 2025,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://www.iumj.indiana.edu/IUMJ/FULLTEXT/2025/74/60572"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2312.02533"
+        }
+      ],
+      "sourceText": "(with Tien-Cuong Dinh) Periodic points for meromorphic self-maps of Fujiki varieties, Indiana University Mathematics Journal, 74 (2025), no. 6, pp. 1561-1587. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-05",
+      "sourceOrder": 5,
+      "title": "Canonical heights for abelian group actions of maximal dynamical rank",
+      "coauthors": "Fei Hu",
+      "appendixBy": null,
+      "citation": "Forum of Mathematics, Sigma 13 (2025), Paper No. e18.",
+      "year": 2025,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/canonical-heights-for-abelian-group-actions-of-maximal-dynamical-rank/2E0A9973959192925E63DA4E20FAB59B"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2311.17759"
+        }
+      ],
+      "sourceText": "(with Fei Hu) Canonical heights for abelian group actions of maximal dynamical rank, Forum of Mathematics, Sigma 13 (2025), Paper No. e18. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-06",
+      "sourceOrder": 6,
+      "title": "Bigness of tangent bundles and dynamical rigidity of Fano manifolds of Picard number 1",
+      "coauthors": "Feng Shao",
+      "appendixBy": "Jie Liu",
+      "citation": "Mathematische Annalen 391 (2025), no. 2, pp. 1731-1752.",
+      "year": 2025,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://link.springer.com/article/10.1007/s00208-024-02955-0?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=nonoa_20240812&utm_content=10.1007/s00208-024-02955-0"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2311.15559"
+        }
+      ],
+      "sourceText": "(with Feng Shao) Bigness of tangent bundles and dynamical rigidity of Fano manifolds of Picard number 1 (with an appendix by Jie Liu), Mathematische Annalen 391 (2025), no. 2, pp. 1731-1752. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-07",
+      "sourceOrder": 7,
+      "title": "Smooth projective surfaces with pseudo-effective tangent bundles",
+      "coauthors": "Jia Jia and Yongnam Lee",
+      "appendixBy": null,
+      "citation": "Journal of the Mathematical Society of Japan 77 (2025), no. 1, pp. 75-102.",
+      "year": 2025,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://projecteuclid.org/journals/journal-of-the-mathematical-society-of-japan/advance-publication/Smooth-projective-surfaces-with-pseudo-effective-tangent-bundles/10.2969/jmsj/91579157.short"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2302.10077"
+        }
+      ],
+      "sourceText": "(with Jia Jia and Yongnam Lee) Smooth projective surfaces with pseudo-effective tangent bundles, Journal of the Mathematical Society of Japan 77 (2025), no. 1, pp. 75-102. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-08",
+      "sourceOrder": 8,
+      "title": "Strictly nef divisors on singular threefolds",
+      "coauthors": "Juanyong Wang",
+      "appendixBy": null,
+      "citation": "International Journal of Mathematics 35, no. 13, Paper No. 2450054 (2024).",
+      "year": 2024,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://www.worldscientific.com/doi/abs/10.1142/S0129167X2450054X?download=true&journalCode=ijm"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2112.03117"
+        }
+      ],
+      "sourceText": "(with Juanyong Wang) Strictly nef divisors on singular threefolds, International Journal of Mathematics 35, no. 13, Paper No. 2450054 (2024). [Journal][arXiv]"
+    },
+    {
+      "id": "paper-09",
+      "sourceOrder": 9,
+      "title": "Algebraic fibre spaces with strictly nef relative anti-log canonical divisors",
+      "coauthors": "Jie Liu, Wenhao Ou, Juanyong Wang, and Xiaokui Yang",
+      "appendixBy": null,
+      "citation": "Journal of the LMS 109, no. 6, Article ID e12942, 26 p. (2024).",
+      "year": 2024,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.12942"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2111.05234"
+        }
+      ],
+      "sourceText": "(with Jie Liu, Wenhao Ou, Juanyong Wang, and Xiaokui Yang) Algebraic fibre spaces with strictly nef relative anti-log canonical divisors, Journal of the LMS 109, no. 6, Article ID e12942, 26 p. (2024). [Journal][arXiv]"
+    },
+    {
+      "id": "paper-10",
+      "sourceOrder": 10,
+      "title": "Boundedness of finite morphisms onto Fano manifolds with large Fano index",
+      "coauthors": "Feng Shao",
+      "appendixBy": null,
+      "citation": "Journal of Algebra 639 (2024), pp. 678-707.",
+      "year": 2024,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0021869323005550?via%3Dihub"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2211.16380"
+        }
+      ],
+      "sourceText": "(with Feng Shao) Boundedness of finite morphisms onto Fano manifolds with large Fano index, Journal of Algebra 639 (2024), pp. 678-707. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-11",
+      "sourceOrder": 11,
+      "title": "Existence of the equivariant minimal model program for compact Kähler threefolds with the action of an abelian group of maximal rank",
+      "coauthors": "",
+      "appendixBy": null,
+      "citation": "Mathematische Nachrichten 296 (2023), no. 7, pp. 3128-3135.",
+      "year": 2023,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/mana.202200127"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2203.07243"
+        }
+      ],
+      "sourceText": "Existence of the equivariant minimal model program for compact Kähler threefolds with the action of an abelian group of maximal rank, Mathematische Nachrichten 296 (2023), no. 7, pp. 3128-3135. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-12",
+      "sourceOrder": 12,
+      "title": "Amplified endomorphisms of Fano fourfolds",
+      "coauthors": "Jia Jia",
+      "appendixBy": null,
+      "citation": "manuscripta mathematica 172 (2023), pp. 567-598.",
+      "year": 2023,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://link.springer.com/article/10.1007/s00229-022-01427-6"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2011.11239"
+        }
+      ],
+      "sourceText": "(with Jia Jia) Amplified endomorphisms of Fano fourfolds, manuscripta mathematica 172 (2023), pp. 567-598. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-13",
+      "sourceOrder": 13,
+      "title": "Rigidity of rationally connected smooth projective varieties from dynamical viewpoints",
+      "coauthors": "Sheng Meng",
+      "appendixBy": null,
+      "citation": "Mathematical Research Letters 30 (2023), no. 2, pp. 589-610.",
+      "year": 2023,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://www.intlpress.com/site/pub/pages/journals/items/mrl/content/vols/0030/0002/a010/"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2005.03983"
+        }
+      ],
+      "sourceText": "(with Sheng Meng) Rigidity of rationally connected smooth projective varieties from dynamical viewpoints, Mathematical Research Letters 30 (2023), no. 2, pp. 589-610. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-14",
+      "sourceOrder": 14,
+      "title": "Non-isomorphic endomorphisms of Fano threefolds",
+      "coauthors": "Sheng Meng and De-Qi Zhang",
+      "appendixBy": null,
+      "citation": "Mathematische Annalen 383 (2022), no. 3-4, pp. 1567-1596.",
+      "year": 2022,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://link.springer.com/article/10.1007/s00208-021-02274-8"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2008.10295"
+        }
+      ],
+      "sourceText": "(with Sheng Meng and De-Qi Zhang) Non-isomorphic endomorphisms of Fano threefolds, Mathematische Annalen 383 (2022), no. 3-4, pp. 1567-1596. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-15",
+      "sourceOrder": 15,
+      "title": "Invariant subvarieties with small dynamical degree",
+      "coauthors": "Yohsuke Matsuzawa, Sheng Meng, Takahiro Shibata, and De-Qi Zhang",
+      "appendixBy": null,
+      "citation": "International Mathematics Research Notices IMRN 2022, no. 15, pp. 11448-11483.",
+      "year": 2022,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://academic.oup.com/imrn/advance-article/doi/10.1093/imrn/rnab039/6224267"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2005.13368"
+        }
+      ],
+      "sourceText": "(with Yohsuke Matsuzawa, Sheng Meng, Takahiro Shibata, and De-Qi Zhang) Invariant subvarieties with small dynamical degree, International Mathematics Research Notices IMRN 2022, no. 15, pp. 11448-11483. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-16",
+      "sourceOrder": 16,
+      "title": "Compact Kähler threefolds with the action of an abelian group of maximal rank",
+      "coauthors": "",
+      "appendixBy": null,
+      "citation": "Proceedings of the AMS 150 (2022), no. 1, pp. 55-68.",
+      "year": 2022,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://doi.org/10.1090/proc/15728"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2003.03760"
+        }
+      ],
+      "sourceText": "Compact Kähler threefolds with the action of an abelian group of maximal rank, Proceedings of the AMS 150 (2022), no. 1, pp. 55-68. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-17",
+      "sourceOrder": 17,
+      "title": "Int-amplified endomorphisms of compact Kähler spaces",
+      "coauthors": "",
+      "appendixBy": null,
+      "citation": "Asian Journal of Mathematics 25 (2021), no. 3, pp. 369-392.",
+      "year": 2021,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://doi.org/10.4310/AJM.2021.v25.n3.a3"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1910.03856"
+        },
+        {
+          "label": "Addendum",
+          "url": "https://link.intlpress.com/JDetail/1842263949989429249"
+        }
+      ],
+      "sourceText": "Int-amplified endomorphisms of compact Kähler spaces, Asian Journal of Mathematics 25 (2021), no. 3, pp. 369-392. [Journal][arXiv][Addendum]"
+    },
+    {
+      "id": "paper-18",
+      "sourceOrder": 18,
+      "title": "Totally invariant divisors of int-amplified endomorphisms of normal projective varieties",
+      "coauthors": "",
+      "appendixBy": null,
+      "citation": "Journal of Geometric Analysis 31 (2021), no. 3, pp. 2568-2593.",
+      "year": 2021,
+      "status": "published",
+      "links": [
+        {
+          "label": "Journal",
+          "url": "https://doi.org/10.1007/s12220-020-00366-6"
+        },
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1905.05362"
+        }
+      ],
+      "sourceText": "Totally invariant divisors of int-amplified endomorphisms of normal projective varieties, Journal of Geometric Analysis 31 (2021), no. 3, pp. 2568-2593. [Journal][arXiv]"
+    },
+    {
+      "id": "paper-19",
+      "sourceOrder": 19,
+      "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphism",
+      "coauthors": "Sheng Meng",
+      "appendixBy": null,
+      "citation": "2024, submitted.",
+      "year": 2024,
+      "status": "preprint",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2408.00566"
+        }
+      ],
+      "sourceText": "(with Sheng Meng) Kawaguchi-Silverman conjecture for int-amplified endomorphism, 2024, submitted. [arXiv]"
+    },
+    {
+      "id": "paper-20",
+      "sourceOrder": 20,
+      "title": "Positivity of compact Kähler varieties admitting an int-amplified endomorphism",
+      "coauthors": "Shin-ichi Matsumura",
+      "appendixBy": null,
+      "citation": "2026, submitted.",
+      "year": 2026,
+      "status": "preprint",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2609.09869v1"
+        }
+      ],
+      "sourceText": "(with Shin-ichi Matsumura) Positivity of compact Kähler varieties admitting an int-amplified endomorphism, 2026, submitted. [arXiv]"
+    },
+    {
+      "id": "paper-21",
+      "sourceOrder": 21,
+      "title": "A note on compact Kähler varieties with pseudo-effective tangent sheaf",
+      "coauthors": "Shin-ichi Matsumura",
+      "appendixBy": null,
+      "citation": "2026, submitted.",
+      "year": 2026,
+      "status": "preprint",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2609.07069v1"
+        }
+      ],
+      "sourceText": "(with Shin-ichi Matsumura) A note on compact Kähler varieties with pseudo-effective tangent sheaf, 2026, submitted. [arXiv]"
+    }
+  ],
+  "notes": [
+    {
+      "text": "(Ph.D. thesis) Algebraic dynamics on compact normal varieties, National University of Singapore, October 2021. [pdf]",
+      "links": [
+        {
+          "label": "Algebraic dynamics on compact normal varieties",
+          "url": "https://scholarbank.nus.edu.sg/handle/10635/204903"
+        },
+        {
+          "label": "pdf",
+          "url": "https://drive.google.com/file/d/1XXRVDEAfFkGnCV0b_5UtPOUVRxSFkbLr/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "text": "A summary of the known results on the endomorphism conjecture (to be updated). [pdf]",
+      "links": [
+        {
+          "label": "pdf",
+          "url": "https://drive.google.com/file/d/1Myj9zHz1s9r7Q9IYmYYqytrOGwitaGp_/view?usp=drive_link"
+        }
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "text": "Fall 2026, Advanced Linear Algebra (H) (joint with Professor Li Luo), East China Normal University, Shanghai.",
+      "links": [
+        {
+          "label": "Li Luo",
+          "url": "https://math.ecnu.edu.cn/en/facultydetailen.html?uid=lluo"
+        }
+      ]
+    },
+    {
+      "text": "Fall 2021, GEH1036/GEK1505, Living with Mathematics (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    },
+    {
+      "text": "Spring 2020, MA1513, Linear Algebra with Differential Equations (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    },
+    {
+      "text": "Fall 2019, MA1513, Linear Algebra with Differential Equations (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    },
+    {
+      "text": "Spring 2019, MA1513, Linear Algebra with Differential Equations (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    },
+    {
+      "text": "Spring 2019, MA1512, Differential Equations for Engineering (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    },
+    {
+      "text": "Fall 2018, GEH1036/GEK1505, Living with Mathematics (Tutor), National University of Singapore, Singapore.",
+      "links": []
+    }
+  ],
+  "talks": [
+    {
+      "text": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application, Complex Geometry Seminar, IBS-CCG, 26 August 2026.",
+      "links": [
+        {
+          "label": "Complex Geometry Seminar",
+          "url": "https://ccg.ibs.re.kr/event/compact-kahler-varieties-with-pseudo-effective-tangent-sheaf-and-a-dynamical-application/"
+        }
+      ],
+      "title": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application",
+      "detail": "Complex Geometry Seminar, IBS-CCG, 26 August 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Kawaguchi-Silverman conjecture for int-amplified endomorphism, Conference on Algebraic Geometry and Arithmetic Geometry 2026, East China Normal University, Shanghai, 5 June 2026.",
+      "links": [
+        {
+          "label": "Conference on Algebraic Geometry and Arithmetic Geometry 2026",
+          "url": "https://math.ecnu.edu.cn/~xlv/conference2026/AGAG.html"
+        }
+      ],
+      "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphism",
+      "detail": "Conference on Algebraic Geometry and Arithmetic Geometry 2026, East China Normal University, Shanghai, 5 June 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Holomorphic symplectic geometry of elliptic surfaces, Algebraic Geometry Seminar, Nanjing University, Nanjing, 27 April 2026.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://math.nju.edu.cn/xsbg/xkbg/qb/20260423/i383704.html"
+        }
+      ],
+      "title": "Holomorphic symplectic geometry of elliptic surfaces",
+      "detail": "Algebraic Geometry Seminar, Nanjing University, Nanjing, 27 April 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Kawaguchi-Silverman conjecture for int-amplified endomorphism, Algebraic Geometry Workshop 2026, Tsinghua University, Beijing, 24 April 2026.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Workshop 2026",
+          "url": "https://ymsc.tsinghua.edu.cn/en/info/1060/3751.htm"
+        }
+      ],
+      "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphism",
+      "detail": "Algebraic Geometry Workshop 2026, Tsinghua University, Beijing, 24 April 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Dynamical toric conjecture in dimension three, Workshop on Fano Spherical varieties -- 2026, Gyeongsang National University, Jinju, February 2026.",
+      "links": [
+        {
+          "label": "Workshop on Fano Spherical varieties -- 2026",
+          "url": "https://sites.google.com/view/wfsv2026"
+        }
+      ],
+      "title": "Dynamical toric conjecture in dimension three",
+      "detail": "Workshop on Fano Spherical varieties -- 2026, Gyeongsang National University, Jinju, February 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Holomorphic symplectic geometry of elliptic surfaces, Workshop on Algebraic Geometry and Complex Geometry in Osaka, Osaka University (Toyonaka Campus), Osaka, 26 January 2026.",
+      "links": [
+        {
+          "label": "Workshop on Algebraic Geometry and Complex Geometry in Osaka",
+          "url": "https://masataka123.github.io/AGCG_Osaka_2026/"
+        }
+      ],
+      "title": "Holomorphic symplectic geometry of elliptic surfaces",
+      "detail": "Workshop on Algebraic Geometry and Complex Geometry in Osaka, Osaka University (Toyonaka Campus), Osaka, 26 January 2026.",
+      "year": 2026,
+      "category": "talk"
+    },
+    {
+      "text": "Holomorphic symplectic geometry of elliptic surfaces, Conference on Recent Progress in Algebraic Geometry, East China Normal University, Shanghai, 15 October 2025.",
+      "links": [
+        {
+          "label": "Conference on Recent Progress in Algebraic Geometry",
+          "url": "https://math.ecnu.edu.cn/academia/gpag2025.html"
+        }
+      ],
+      "title": "Holomorphic symplectic geometry of elliptic surfaces",
+      "detail": "Conference on Recent Progress in Algebraic Geometry, East China Normal University, Shanghai, 15 October 2025.",
+      "year": 2025,
+      "category": "talk"
+    },
+    {
+      "text": "Canonical heights for abelian group actions of maximal dynamical rank, Topology, Geometry, and Dynamics Seminar, National University of Singapore, Singapore, 27 August 2025.",
+      "links": [
+        {
+          "label": "Topology, Geometry, and Dynamics Seminar",
+          "url": "https://www.math.nus.edu.sg/category/events/colloquia-seminars/topology-geometry-dynamics/"
+        }
+      ],
+      "title": "Canonical heights for abelian group actions of maximal dynamical rank",
+      "detail": "Topology, Geometry, and Dynamics Seminar, National University of Singapore, Singapore, 27 August 2025.",
+      "year": 2025,
+      "category": "talk"
+    },
+    {
+      "text": "Surjective endomorphisms of smooth rationally connected varieties (Lectures 1-3), Summer Mathematical School \"Algebra and Geometry\", Suzdal, 3-5 August 2025.",
+      "links": [
+        {
+          "label": "Summer Mathematical School \"Algebra and Geometry\"",
+          "url": "http://www.bogomolov-lab.ru/SHKOLA2025/schedule.html"
+        }
+      ],
+      "title": "Surjective endomorphisms of smooth rationally connected varieties (Lectures 1-3)",
+      "detail": "Summer Mathematical School \"Algebra and Geometry\", Suzdal, 3-5 August 2025.",
+      "year": 2025,
+      "category": "talk"
+    },
+    {
+      "text": "Kawaguchi-Silverman conjecture for int-amplified endomorphisms (online), Birational Geometry Seminar 2025, UCLA, Los Angeles, 13 June 2025.",
+      "links": [
+        {
+          "label": "Birational Geometry Seminar 2025",
+          "url": "https://www.math.ucla.edu/~jmoraga/BGS2025"
+        }
+      ],
+      "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphisms",
+      "detail": "(online), Birational Geometry Seminar 2025, UCLA, Los Angeles, 13 June 2025.",
+      "year": 2025,
+      "category": "talk"
+    },
+    {
+      "text": "On the endomorphism conjecture and its interaction with the positivity of tangent bundles (onsite), Algebraic Geometry Seminar, East China Normal University, Shanghai, 28 March 2025.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://math.ecnu.edu.cn/~xlv/AGS/present.html"
+        }
+      ],
+      "title": "On the endomorphism conjecture and its interaction with the positivity of tangent bundles",
+      "detail": "(onsite), Algebraic Geometry Seminar, East China Normal University, Shanghai, 28 March 2025.",
+      "year": 2025,
+      "category": "talk"
+    },
+    {
+      "text": "Dynamical restrictions on the positivity of tangent bundles (online, slides), Workshop on birational geometry, Steklov Institute, Moscow, 5 December 2024.",
+      "links": [
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1YXF06xQ781mf_nUivlLNKkasDPoPwFN4/view?usp=sharing"
+        },
+        {
+          "label": "Workshop on birational geometry",
+          "url": "https://homepage.mi-ras.ru/~prokhoro/conf/24/index.html"
+        }
+      ],
+      "title": "Dynamical restrictions on the positivity of tangent bundles",
+      "detail": "(online, slides), Workshop on birational geometry, Steklov Institute, Moscow, 5 December 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Dynamical restrictions on the positivity of tangent bundles (onsite), Conference on algebraic geometry, Shandong University, Jinan, 16 November 2024.",
+      "links": [],
+      "title": "Dynamical restrictions on the positivity of tangent bundles",
+      "detail": "(onsite), Conference on algebraic geometry, Shandong University, Jinan, 16 November 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Projective varieties with almost nef tangent sheaves and its dynamical application, Workshop on Algebraic Geometry over complex number field or in positive characteristic (onsite, slides), Osaka Metropolitan University (Sugimoto Campus), Osaka, 18 September 2024.",
+      "links": [
+        {
+          "label": "Workshop on Algebraic Geometry over complex number field or in positive characteristic",
+          "url": "https://masataka123.github.io/tangent_anticanonical/"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1AzcRmWGvjJ_tVIrdmbTbStEGRZdrzW4t/view?usp=sharing"
+        }
+      ],
+      "title": "Projective varieties with almost nef tangent sheaves and its dynamical application",
+      "detail": "Workshop on Algebraic Geometry over complex number field or in positive characteristic (onsite, slides), Osaka Metropolitan University (Sugimoto Campus), Osaka, 18 September 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Periodic points for meromorphic self-maps of Fujiki varieties, 2024 Seoul Workshop on Complex Geometry and Analysis (onsite), Seoul National University, Seoul, 27 August 2024.",
+      "links": [
+        {
+          "label": "2024 Seoul Workshop on Complex Geometry and Analysis",
+          "url": "https://sites.google.com/view/2024cg/home?authuser=0"
+        }
+      ],
+      "title": "Periodic points for meromorphic self-maps of Fujiki varieties",
+      "detail": "2024 Seoul Workshop on Complex Geometry and Analysis (onsite), Seoul National University, Seoul, 27 August 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Pseudo-effectiveness of tangent bundles of smooth complete intersections and weighted hypersurfaces, Algebraic Geometry Seminar (online, slides), School of Mathematics, Sun Yat-sen University, Guangzhou, 23 May 2024.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://math.sysu.edu.cn/event/3479"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1PHtpJpZObymsnJoCd1j2dW8nX4vA34qD/view?usp=sharing"
+        }
+      ],
+      "title": "Pseudo-effectiveness of tangent bundles of smooth complete intersections and weighted hypersurfaces",
+      "detail": "Algebraic Geometry Seminar (online, slides), School of Mathematics, Sun Yat-sen University, Guangzhou, 23 May 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Canonical heights for abelian group actions of maximal dynamical rank, Complex Algebraic Geometry and Related Topics (onsite), Morningside Center of Mathematics, Chinese Academy of Sciences, Beijing, 26 April 2024.",
+      "links": [
+        {
+          "label": "Complex Algebraic Geometry and Related Topics",
+          "url": "http://www.mcm.ac.cn/events/programs/202401/t20240122_768739.html"
+        }
+      ],
+      "title": "Canonical heights for abelian group actions of maximal dynamical rank",
+      "detail": "Complex Algebraic Geometry and Related Topics (onsite), Morningside Center of Mathematics, Chinese Academy of Sciences, Beijing, 26 April 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Structure of projective varieties with almost nef or positively curved tangent sheaves, Algebraic Geometry Seminar (onsite), June E Huh Center for Mathematical Challenges (HCMC), Korea Institute for Advanced Study (KIAS), Seoul, 9 April 2024.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://sites.google.com/view/kias-ag/%ED%99%88"
+        }
+      ],
+      "title": "Structure of projective varieties with almost nef or positively curved tangent sheaves",
+      "detail": "Algebraic Geometry Seminar (onsite), June E Huh Center for Mathematical Challenges (HCMC), Korea Institute for Advanced Study (KIAS), Seoul, 9 April 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Introduction to the positivity of tangent sheaves of projective varieties, Algebraic Geometry Seminar (onsite), June E Huh Center for Mathematical Challenges (HCMC), Korea Institute for Advanced Study (KIAS), Seoul, 8 April 2024.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://sites.google.com/view/kias-ag/%ED%99%88"
+        }
+      ],
+      "title": "Introduction to the positivity of tangent sheaves of projective varieties",
+      "detail": "Algebraic Geometry Seminar (onsite), June E Huh Center for Mathematical Challenges (HCMC), Korea Institute for Advanced Study (KIAS), Seoul, 8 April 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "On an endomorphism conjecture of Fano manifolds of Picard number 1, Algebraic Geometry Seminar (online, slides), YMSC, Tsinghua University, Beijing, 12 January 2024.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://ymsc.tsinghua.edu.cn/en/info/1053/2568.htm"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1U5VhbhAUtBQpAQ6sOzJD0CHpbXKBO4HE/view?usp=sharing"
+        }
+      ],
+      "title": "On an endomorphism conjecture of Fano manifolds of Picard number 1",
+      "detail": "Algebraic Geometry Seminar (online, slides), YMSC, Tsinghua University, Beijing, 12 January 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Periodic points for meromorphic self-maps of Fujiki varieties, SCV&CG Seminar (onsite), AMSS, Chinese Academy of Sciences, Beijing, 11 January 2024.",
+      "links": [],
+      "title": "Periodic points for meromorphic self-maps of Fujiki varieties",
+      "detail": "SCV&CG Seminar (onsite), AMSS, Chinese Academy of Sciences, Beijing, 11 January 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Canonical heights for abelian group actions of maximal dynamical rank, Algebraic Geometry Seminar (onsite, slides), Shanghai Jiao Tong University, Shanghai, 4 January 2024.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://www.math.sjtu.edu.cn/Default/seminarshow/tags/MDAwMDAwMDAwMLGufpSHpKF2"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1UUxhZcsu7TXA1n3z5hi3hLEZ6OKVppep/view?usp=sharing"
+        }
+      ],
+      "title": "Canonical heights for abelian group actions of maximal dynamical rank",
+      "detail": "Algebraic Geometry Seminar (onsite, slides), Shanghai Jiao Tong University, Shanghai, 4 January 2024.",
+      "year": 2024,
+      "category": "talk"
+    },
+    {
+      "text": "Dynamical rigidity of Fano manifold of Picard number 1 with big tangent bundle, Algebraic Geometry in East Asia (onsite), Korea Institute for Advanced Study (KIAS), Seoul, 9 November 2023.",
+      "links": [
+        {
+          "label": "Algebraic Geometry in East Asia",
+          "url": "http://events.kias.re.kr/h/AGEA23/"
+        }
+      ],
+      "title": "Dynamical rigidity of Fano manifold of Picard number 1 with big tangent bundle",
+      "detail": "Algebraic Geometry in East Asia (onsite), Korea Institute for Advanced Study (KIAS), Seoul, 9 November 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Positivity of tangent sheaf of projective varieties, Algebraic Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 10 October 2023.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://ccg.ibs.re.kr/event/2023-10-10/"
+        }
+      ],
+      "title": "Positivity of tangent sheaf of projective varieties",
+      "detail": "Algebraic Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 10 October 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Structure of projective varieties with certain positive tangent sheaves, Workshop on Complex Dynamics and Geometry (onsite), Institute for Mathematical Sciences (IMS), National University of Singapore, Singapore, 31 August 2023.",
+      "links": [
+        {
+          "label": "Workshop on Complex Dynamics and Geometry",
+          "url": "https://ims.nus.edu.sg/events/recent-developments-in-algebraic-geometry-arithmetic-and-dynamics2/"
+        }
+      ],
+      "title": "Structure of projective varieties with certain positive tangent sheaves",
+      "detail": "Workshop on Complex Dynamics and Geometry (onsite), Institute for Mathematical Sciences (IMS), National University of Singapore, Singapore, 31 August 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Compact Kähler threefolds with the action of an abelian group of maximal rank, Korea Several Complex Variables Workshop (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 16 August 2023.",
+      "links": [
+        {
+          "label": "Korea Several Complex Variables Workshop",
+          "url": "https://ccg.ibs.re.kr/event/2023-08-16-18/"
+        }
+      ],
+      "title": "Compact Kähler threefolds with the action of an abelian group of maximal rank",
+      "detail": "Korea Several Complex Variables Workshop (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 16 August 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Invariant subvarieties with small dynamical degree, 2023 KMS Spring Meeting, Special Session (onsite, slides), Daejeon Convention Center, Daejeon, 28 April 2023.",
+      "links": [
+        {
+          "label": "2023 KMS Spring Meeting, Special Session",
+          "url": "http://www.kms.or.kr/conference/2023_spring/index.html?period=84"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1geMH_viGAKw7MY1ljwM2FezIMuOBXXb8/view?usp=sharing"
+        }
+      ],
+      "title": "Invariant subvarieties with small dynamical degree",
+      "detail": "2023 KMS Spring Meeting, Special Session (onsite, slides), Daejeon Convention Center, Daejeon, 28 April 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Smooth projective surfaces with pseudo-effective tangent bundles, Seminars on Algebraic Surfaces and Related Topics (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 27 February 2023.",
+      "links": [
+        {
+          "label": "Seminars on Algebraic Surfaces and Related Topics",
+          "url": "https://ccg.ibs.re.kr/event/2023-02-27-28/"
+        }
+      ],
+      "title": "Smooth projective surfaces with pseudo-effective tangent bundles",
+      "detail": "Seminars on Algebraic Surfaces and Related Topics (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 27 February 2023.",
+      "year": 2023,
+      "category": "talk"
+    },
+    {
+      "text": "Finite morphisms onto Fano manifolds with large Fano index, Informal Seminar, Center for Complex Geometry, Institute for Basic Science, Daejeon, 21 December 2022.",
+      "links": [],
+      "title": "Finite morphisms onto Fano manifolds with large Fano index",
+      "detail": "Informal Seminar, Center for Complex Geometry, Institute for Basic Science, Daejeon, 21 December 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Finite morphisms onto Fano manifolds with large Fano index, Algebraic Geometry Seminar (online, slides), East China Normal University, Shanghai, 15 December 2022.",
+      "links": [
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1WtqsPnlY15CNgBO-FHCljKOGh2X53vaT/view?usp=sharing"
+        }
+      ],
+      "title": "Finite morphisms onto Fano manifolds with large Fano index",
+      "detail": "Algebraic Geometry Seminar (online, slides), East China Normal University, Shanghai, 15 December 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Dynamical Characterization of Projective Toric Varieties, Complex Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 1 September 2022.",
+      "links": [
+        {
+          "label": "Complex Geometry Seminar",
+          "url": "https://ccg.ibs.re.kr/event/2022-09-01/"
+        }
+      ],
+      "title": "Dynamical Characterization of Projective Toric Varieties",
+      "detail": "Complex Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 1 September 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Compact Kähler threefolds with the action of an abelian group of maximal dynamical rank, Geometry Seminar (onsite, slides), Korea Institute for Advanced Study, Seoul, 19 July 2022.",
+      "links": [
+        {
+          "label": "Geometry Seminar",
+          "url": "http://www.kias.re.kr/"
+        },
+        {
+          "label": "onsite",
+          "url": "https://www.youtube.com/watch?v=j5ol3MhQsfE"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1n2ha7DNlon0Lt1p6yskvvQ2pU7_NWtK3/view?usp=sharing"
+        }
+      ],
+      "title": "Compact Kähler threefolds with the action of an abelian group of maximal dynamical rank",
+      "detail": "Geometry Seminar (onsite, slides), Korea Institute for Advanced Study, Seoul, 19 July 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Compact Kähler threefolds with the action of an abelian group of maximal dynamical rank, Zoom Algebraic Geometry Seminar (online, slides), 15 March 2022.",
+      "links": [
+        {
+          "label": "Zoom Algebraic Geometry Seminar",
+          "url": "https://www.maths.ed.ac.uk/cheltsov/zag/"
+        },
+        {
+          "label": "online",
+          "url": "https://www.youtube.com/watch?v=5mMhhnbqwE4"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1_IEWyibXk0zbto28H1ATjubz_cADvBSl/view?usp=sharing"
+        }
+      ],
+      "title": "Compact Kähler threefolds with the action of an abelian group of maximal dynamical rank",
+      "detail": "Zoom Algebraic Geometry Seminar (online, slides), 15 March 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Strictly nef divisors on singular varieties, Complex Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 3 March 2022.",
+      "links": [
+        {
+          "label": "Complex Geometry Seminar",
+          "url": "https://ccg.ibs.re.kr/events/category/seminar/"
+        }
+      ],
+      "title": "Strictly nef divisors on singular varieties",
+      "detail": "Complex Geometry Seminar (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 3 March 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Strictly nef divisors on singular varieties II, Geometry Seminar (online, slides), Korea Institute for Advanced Study, Seoul, 25 January 2022.",
+      "links": [
+        {
+          "label": "Geometry Seminar",
+          "url": "http://www.kias.re.kr/"
+        },
+        {
+          "label": "online",
+          "url": "https://www.youtube.com/watch?v=19jNQ65FlU4"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/16_g81_f4_3fw7pcBehUiCt3T7ZU6R4jd/view?usp=sharing"
+        }
+      ],
+      "title": "Strictly nef divisors on singular varieties II",
+      "detail": "Geometry Seminar (online, slides), Korea Institute for Advanced Study, Seoul, 25 January 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Strictly nef divisors on singular varieties I, Geometry Seminar (online, slides), Korea Institute for Advanced Study, Seoul, 24 January 2022.",
+      "links": [
+        {
+          "label": "Geometry Seminar",
+          "url": "http://www.kias.re.kr/"
+        },
+        {
+          "label": "online",
+          "url": "https://www.youtube.com/watch?v=bpeOfRoQ1Jw"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/125K3vHuGNl2HqNojySyp0dtBcDEi_WQa/view?usp=sharing"
+        }
+      ],
+      "title": "Strictly nef divisors on singular varieties I",
+      "detail": "Geometry Seminar (online, slides), Korea Institute for Advanced Study, Seoul, 24 January 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Characterization of projective toric varieties from dynamical viewpoints, Weekly seminar on Explicit Birational Geometry (online, slides), SCMS Fudan University, Shanghai, 5 January 2022.",
+      "links": [
+        {
+          "label": "Weekly seminar on Explicit Birational Geometry",
+          "url": "https://chenjiangfudan.github.io/home/conferences/XBGS.html"
+        },
+        {
+          "label": "online",
+          "url": "https://www.bilibili.com/video/BV1sF411q74u?spm_id_from=333.337.search-card.all.click"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1XtnmyOhfewhu-eu53p-SYPF5uMEElMsR/view?usp=sharing"
+        }
+      ],
+      "title": "Characterization of projective toric varieties from dynamical viewpoints",
+      "detail": "Weekly seminar on Explicit Birational Geometry (online, slides), SCMS Fudan University, Shanghai, 5 January 2022.",
+      "year": 2022,
+      "category": "talk"
+    },
+    {
+      "text": "Projective varieties with (relative) anti-log canonical divisors being strictly nef, Topology and Geometry Seminar (online, slides), National University of Singapore, Singapore, 3 November 2021.",
+      "links": [
+        {
+          "label": "Topology and Geometry Seminar",
+          "url": "https://www.math.nus.edu.sg/category/events/colloquia-seminars/topology-geometry/"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/14srH3fH8QSV95qK14IhRAt-8pGG-E8di/view?usp=sharing"
+        }
+      ],
+      "title": "Projective varieties with (relative) anti-log canonical divisors being strictly nef",
+      "detail": "Topology and Geometry Seminar (online, slides), National University of Singapore, Singapore, 3 November 2021.",
+      "year": 2021,
+      "category": "talk"
+    },
+    {
+      "text": "Algebraic dynamics on compact normal varieties, Ph.D. thesis oral defense (online, slides), National University of Singapore, Singapore, 6 October 2021.",
+      "links": [
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1hma1_4X5ANILVNlZtlJtzy6pKODKa4D6/view?usp=sharing"
+        }
+      ],
+      "title": "Algebraic dynamics on compact normal varieties",
+      "detail": "Ph.D. thesis oral defense (online, slides), National University of Singapore, Singapore, 6 October 2021.",
+      "year": 2021,
+      "category": "talk"
+    },
+    {
+      "text": "Fano threefolds and fourfolds admitting non-isomorphic endomorphisms, Seminar of Algebraic Geometry in East Asia (online, slides), 5 March 2021.",
+      "links": [
+        {
+          "label": "Seminar of Algebraic Geometry in East Asia",
+          "url": "https://sites.google.com/ncts.ntu.edu.tw/agea-seminar"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1t4fq6vSlYQ-41CyPBwCZZ0up29GKaWdM/view?usp=sharing"
+        }
+      ],
+      "title": "Fano threefolds and fourfolds admitting non-isomorphic endomorphisms",
+      "detail": "Seminar of Algebraic Geometry in East Asia (online, slides), 5 March 2021.",
+      "year": 2021,
+      "category": "talk"
+    },
+    {
+      "text": "Rigidity of rationally connected smooth projective varieties from dynamical viewpoints, Seminar on Algebraic Dynamics (online, slides), Korea Institute for Advanced Study, Seoul, 1 July 2020.",
+      "links": [
+        {
+          "label": "Seminar on Algebraic Dynamics",
+          "url": "https://sites.google.com/view/shengmeng/seminars/seminar-on-algebraic-dynamics"
+        },
+        {
+          "label": "online",
+          "url": "https://www.youtube.com/watch?v=QZSqIPh7oPI"
+        },
+        {
+          "label": "slides",
+          "url": "https://drive.google.com/file/d/1BFrdTx7QsB3uJN9cIv5qG6LZrKYHuDoq/view?usp=sharing"
+        }
+      ],
+      "title": "Rigidity of rationally connected smooth projective varieties from dynamical viewpoints",
+      "detail": "Seminar on Algebraic Dynamics (online, slides), Korea Institute for Advanced Study, Seoul, 1 July 2020.",
+      "year": 2020,
+      "category": "talk"
+    },
+    {
+      "text": "Int-Amplified endomorphisms of compact Kähler spaces, Topology and Geometry Seminar (onsite), National University of Singapore, Singapore, 29 January 2020.",
+      "links": [
+        {
+          "label": "Topology and Geometry Seminar",
+          "url": "https://www.math.nus.edu.sg/category/events/colloquia-seminars/topology-geometry/"
+        }
+      ],
+      "title": "Int-Amplified endomorphisms of compact Kähler spaces",
+      "detail": "Topology and Geometry Seminar (onsite), National University of Singapore, Singapore, 29 January 2020.",
+      "year": 2020,
+      "category": "talk"
+    },
+    {
+      "text": "Totally invariant divisors of amplified endomorphisms of normal projective varieties, Algebraic Geometry Seminar (onsite), East China Normal University, Shanghai, 25 June 2019.",
+      "links": [
+        {
+          "label": "Algebraic Geometry Seminar",
+          "url": "https://math.ecnu.edu.cn/academia/ags/2019-Spring.html"
+        }
+      ],
+      "title": "Totally invariant divisors of amplified endomorphisms of normal projective varieties",
+      "detail": "Algebraic Geometry Seminar (onsite), East China Normal University, Shanghai, 25 June 2019.",
+      "year": 2019,
+      "category": "talk"
+    },
+    {
+      "text": "Totally invariant divisors of amplified endomorphisms of normal projective varieties, Topology and Geometry Seminar (onsite), National University of Singapore, Singapore, 15 May 2019.",
+      "links": [
+        {
+          "label": "Topology and Geometry Seminar",
+          "url": "https://www.math.nus.edu.sg/category/events/colloquia-seminars/topology-geometry/"
+        }
+      ],
+      "title": "Totally invariant divisors of amplified endomorphisms of normal projective varieties",
+      "detail": "Topology and Geometry Seminar (onsite), National University of Singapore, Singapore, 15 May 2019.",
+      "year": 2019,
+      "category": "talk"
+    },
+    {
+      "text": "Positivity notions and base loci II (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 16 May 2022.",
+      "links": [],
+      "title": "Positivity notions and base loci II",
+      "detail": "(onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 16 May 2022.",
+      "year": 2022,
+      "category": "reading"
+    },
+    {
+      "text": "Positivity notions and base loci I (onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 9 May 2022.",
+      "links": [],
+      "title": "Positivity notions and base loci I",
+      "detail": "(onsite), Center for Complex Geometry, Institute for Basic Science, Daejeon, 9 May 2022.",
+      "year": 2022,
+      "category": "reading"
+    }
+  ],
+  "collaborators": [
+    {
+      "text": "Zelong Chen (Shanghai)",
+      "links": [],
+      "name": "Zelong Chen",
+      "note": "Shanghai"
+    },
+    {
+      "text": "Tien-Cuong Dinh (Singapore)",
+      "links": [
+        {
+          "label": "Tien-Cuong Dinh",
+          "url": "https://blog.nus.edu.sg/dinh/"
+        }
+      ],
+      "name": "Tien-Cuong Dinh",
+      "note": "Singapore"
+    },
+    {
+      "text": "Fei Hu (Nanjing)",
+      "links": [
+        {
+          "label": "Fei Hu",
+          "url": "https://sites.google.com/view/feihu90s/"
+        }
+      ],
+      "name": "Fei Hu",
+      "note": "Nanjing"
+    },
+    {
+      "text": "Jun-Muk Hwang (Mentor at IBS, Daejeon)",
+      "links": [
+        {
+          "label": "Jun-Muk Hwang",
+          "url": "https://mathscinet.ams.org/mathscinet/author?authorId=362260"
+        }
+      ],
+      "name": "Jun-Muk Hwang",
+      "note": "Mentor at IBS, Daejeon"
+    },
+    {
+      "text": "Masataka Iwai (Osaka)",
+      "links": [
+        {
+          "label": "Masataka Iwai",
+          "url": "https://masataka123.github.io/blog3_e/"
+        }
+      ],
+      "name": "Masataka Iwai",
+      "note": "Osaka"
+    },
+    {
+      "text": "Jia Jia (Shanghai)",
+      "links": [
+        {
+          "label": "Jia Jia",
+          "url": "https://mathjiajia.github.io"
+        }
+      ],
+      "name": "Jia Jia",
+      "note": "Shanghai"
+    },
+    {
+      "text": "Jie Liu (Beijing)",
+      "links": [
+        {
+          "label": "Jie Liu",
+          "url": "http://www.jliumath.com"
+        }
+      ],
+      "name": "Jie Liu",
+      "note": "Beijing"
+    },
+    {
+      "text": "Yongnam Lee (Mentor at IBS, Daejeon)",
+      "links": [
+        {
+          "label": "Yongnam Lee",
+          "url": "https://mathsci.kaist.ac.kr/~ynlee/"
+        }
+      ],
+      "name": "Yongnam Lee",
+      "note": "Mentor at IBS, Daejeon"
+    },
+    {
+      "text": "Shin-ichi Matsumura (Sendai)",
+      "links": [
+        {
+          "label": "Shin-ichi Matsumura",
+          "url": "https://sites.google.com/view/math-matsumura"
+        }
+      ],
+      "name": "Shin-ichi Matsumura",
+      "note": "Sendai"
+    },
+    {
+      "text": "Yohsuke Matsuzawa (Osaka)",
+      "links": [
+        {
+          "label": "Yohsuke Matsuzawa",
+          "url": "https://sites.google.com/view/yohsukematsuzawa/top"
+        }
+      ],
+      "name": "Yohsuke Matsuzawa",
+      "note": "Osaka"
+    },
+    {
+      "text": "Sheng Meng (Shanghai)",
+      "links": [
+        {
+          "label": "Sheng Meng",
+          "url": "https://math.ecnu.edu.cn/~smeng/intro_c.html?language=2&id=257"
+        }
+      ],
+      "name": "Sheng Meng",
+      "note": "Shanghai"
+    },
+    {
+      "text": "Wenhao Ou (Beijing)",
+      "links": [
+        {
+          "label": "Wenhao Ou",
+          "url": "https://sites.google.com/site/wenhaooumath/"
+        }
+      ],
+      "name": "Wenhao Ou",
+      "note": "Beijing"
+    },
+    {
+      "text": "Feng Shao (Xiamen)",
+      "links": [
+        {
+          "label": "Feng Shao",
+          "url": "https://math.xmu.edu.cn/info/1083/37290.htm"
+        }
+      ],
+      "name": "Feng Shao",
+      "note": "Xiamen"
+    },
+    {
+      "text": "Takahiro Shibata (Fukushima)",
+      "links": [
+        {
+          "label": "Takahiro Shibata",
+          "url": "https://sites.google.com/view/tshibata/"
+        }
+      ],
+      "name": "Takahiro Shibata",
+      "note": "Fukushima"
+    },
+    {
+      "text": "Juanyong Wang (Beijing)",
+      "links": [
+        {
+          "label": "Juanyong Wang",
+          "url": "https://www.researchgate.net/profile/Juanyong-Wang"
+        }
+      ],
+      "name": "Juanyong Wang",
+      "note": "Beijing"
+    },
+    {
+      "text": "Xiaokui Yang (Beijing)",
+      "links": [
+        {
+          "label": "Xiaokui Yang",
+          "url": "https://ymsc.tsinghua.edu.cn/en/info/1031/1873.htm"
+        }
+      ],
+      "name": "Xiaokui Yang",
+      "note": "Beijing"
+    },
+    {
+      "text": "De-Qi Zhang (Supervisor at NUS, Singapore)",
+      "links": [
+        {
+          "label": "De-Qi Zhang",
+          "url": "https://blog.nus.edu.sg/matzdq/"
+        }
+      ],
+      "name": "De-Qi Zhang",
+      "note": "Supervisor at NUS, Singapore"
+    }
+  ]
+}
