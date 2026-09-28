@@ -1,0 +1,156 @@
+name: Sync Google Sites and publish homepage
+
+on:
+  schedule:
+    # UTC 00:17, 06:17, 12:17, 18:17 (China 08:17, 14:17, 20:17, 02:17).
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      allow_large_removal:
+        description: 'Allow a deliberate large removal of published Google Sites content'
+        type: boolean
+        required: false
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-google-sites.yml'
+      - 'source/**'
+      - '*.html'
+      - 'home/index.html'
+      - 'research/index.html'
+      - 'talks/index.html'
+      - 'teaching/index.html'
+      - 'links/index.html'
+      - 'assets/**'
+      - 'files/**'
+      - '.nojekyll'
+      - 'CNAME'
+
+# Each job receives only the permissions it needs.
+permissions: {}
+
+concurrency:
+  group: homepage-sync-and-deploy
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      publish: ${{ steps.commit.outputs.publish }}
+    steps:
+      - name: Check out the latest main branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.12'
+
+      - name: Install the image processing dependency
+        run: |
+          python -m pip install --disable-pip-version-check --only-binary=:all: -r source/requirements-sync.txt
+
+      - name: Test the synchronizer
+        run: python -m unittest discover -s source/tests -v
+
+      - name: Fetch and validate the published Google site
+        env:
+          ALLOW_LARGE_REMOVAL: ${{ inputs.allow_large_removal || false }}
+        run: |
+          args=(--root .)
+          if [ "$ALLOW_LARGE_REMOVAL" = "true" ]; then
+            args+=(--allow-large-removal)
+          fi
+          python source/sync_google_sites.py "${args[@]}"
+
+      - name: Save validated content changes
+        id: commit
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          # Never stage downloaded scripts, workflow changes, or arbitrary paths.
+          git add -A -- \
+            index.html research.html talks.html teaching.html links.html 404.html \
+            home/index.html research/index.html talks/index.html teaching/index.html links/index.html \
+            source/content.json source/local-files.json source/sync-state.json \
+            assets/images/banner.webp assets/images/guolei-zhong-huangshan.webp \
+            ':(glob)files/*.pdf'
+
+          publish=false
+          if ! git diff --cached --quiet -- . ':(exclude)source/sync-state.json'; then
+            publish=true
+          fi
+          # Manual runs also provide a retry when a previous Pages deployment failed.
+          if [ "$EVENT_NAME" != "schedule" ]; then
+            publish=true
+          fi
+
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: sync published Google Sites content'
+            # Fail safely if main changed during this run; never overwrite user commits.
+            git push origin HEAD:main
+          fi
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare public website files
+        if: steps.commit.outputs.publish == 'true'
+        run: |
+          python - <<'PY'
+          import os
+          import shutil
+          from pathlib import Path
+
+          root = Path.cwd()
+          site = Path(os.environ['RUNNER_TEMP']) / 'pages-site'
+          site.mkdir()
+          for name in ('.nojekyll', 'index.html', 'research.html', 'talks.html', 'teaching.html', 'links.html', '404.html'):
+              shutil.copy2(root / name, site / name)
+          if (root / 'CNAME').is_file():
+              shutil.copy2(root / 'CNAME', site / 'CNAME')
+          for name in ('home', 'research', 'talks', 'teaching', 'links'):
+              (site / name).mkdir()
+              shutil.copy2(root / name / 'index.html', site / name / 'index.html')
+          for name in ('assets', 'files'):
+              shutil.copytree(root / name, site / name)
+          PY
+
+      - name: Upload the website artifact
+        if: steps.commit.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ${{ runner.temp }}/pages-site
+
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      # GITHUB_TOKEN commits do not trigger branch-based Pages builds. Deploy the
+      # validated artifact explicitly in this workflow instead.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
