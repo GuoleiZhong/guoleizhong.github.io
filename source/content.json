@@ -898,60 +898,72 @@
     },
     {
       "appendixBy": null,
-      "citation": "2024, submitted.",
+      "citation": "submitted.",
       "coauthors": "Sheng Meng",
       "id": "paper-19",
       "links": [
         {
-          "end": 104,
+          "end": 98,
           "label": "arXiv",
-          "start": 99,
+          "start": 93,
           "url": "https://arxiv.org/abs/2408.00566"
         }
       ],
       "sourceOrder": 19,
-      "sourceText": "(with Sheng Meng) Kawaguchi-Silverman conjecture for int-amplified endomorphism, 2024, submitted. [arXiv]",
+      "sourceText": "(with Sheng Meng) Kawaguchi-Silverman conjecture for int-amplified endomorphism, submitted. [arXiv]",
       "status": "preprint",
       "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphism",
-      "year": 2024
+      "year": null
     },
     {
       "appendixBy": null,
-      "citation": "2026, submitted.",
+      "citation": "submitted.",
       "coauthors": "Shin-ichi Matsumura",
       "id": "paper-20",
       "links": [
         {
-          "end": 130,
+          "end": 124,
           "label": "arXiv",
-          "start": 125,
+          "start": 119,
           "url": "https://arxiv.org/abs/2609.09869v1"
         }
       ],
       "sourceOrder": 20,
-      "sourceText": "(with Shin-ichi Matsumura) Positivity of compact Kähler varieties admitting an int-amplified endomorphism, 2026, submitted. [arXiv]",
+      "sourceText": "(with Shin-ichi Matsumura) Positivity of compact Kähler varieties admitting an int-amplified endomorphism, submitted. [arXiv]",
       "status": "preprint",
       "title": "Positivity of compact Kähler varieties admitting an int-amplified endomorphism",
-      "year": 2026
+      "year": null
     },
     {
       "appendixBy": null,
-      "citation": "2026, submitted.",
+      "citation": "submitted.",
       "coauthors": "Shin-ichi Matsumura",
       "id": "paper-21",
       "links": [
         {
-          "end": 122,
+          "end": 116,
           "label": "arXiv",
-          "start": 117,
+          "start": 111,
           "url": "https://arxiv.org/abs/2609.07069v1"
         }
       ],
       "sourceOrder": 21,
-      "sourceText": "(with Shin-ichi Matsumura) A note on compact Kähler varieties with pseudo-effective tangent sheaf, 2026, submitted. [arXiv]",
+      "sourceText": "(with Shin-ichi Matsumura) A note on compact Kähler varieties with pseudo-effective tangent sheaf, submitted. [arXiv]",
       "status": "preprint",
       "title": "A note on compact Kähler varieties with pseudo-effective tangent sheaf",
-      "year": 2026
+      "year": null
+    },
+    {
+      "appendixBy": null,
+      "citation": "submitted.",
+      "coauthors": "Jun-Muk Hwang",
+      "id": "paper-22",
+      "links": [],
+      "sourceOrder": 22,
+      "sourceText": "(with Jun-Muk Hwang) Fano threefolds arising from finite quotients of compactifications of the projective linear group, submitted.",
+      "status": "preprint",
+      "title": "Fano threefolds arising from finite quotients of compactifications of the projective linear group",
+      "year": null
     }
   ],
   "researchHeading": "About my research interest:",
@@ -961,13 +973,43 @@
       "text": "My research interests lie primarily in complex algebraic geometry and its interaction with dynamics."
     }
   ],
-  "retrieved": "2026-09-26",
+  "retrieved": "2026-09-28",
   "source": "https://sites.google.com/view/guoleizhongshomepage/home",
   "talkSections": [
     {
       "category": "talk",
       "heading": "Talks in 2026:",
       "items": [
+        {
+          "category": "talk",
+          "detail": "Birational Geometry Seminar Fall 2026, Fudan University, 13 November 2026.",
+          "links": [
+            {
+              "end": 42,
+              "label": "Birational Geometry Seminar Fall 2026",
+              "start": 5,
+              "url": "https://xiaoweijiang-math.github.io/FDU_BGS"
+            }
+          ],
+          "text": "TBA, Birational Geometry Seminar Fall 2026, Fudan University, 13 November 2026.",
+          "title": "TBA",
+          "year": 2026
+        },
+        {
+          "category": "talk",
+          "detail": "NENU–ECNU–YBU Joint Forum for Young Mathematicians, Department of Mathematics, College of Science, Yanbian University, 18 September 2026.",
+          "links": [
+            {
+              "end": 140,
+              "label": "NENU–ECNU–YBU Joint Forum for Young Mathematicians",
+              "start": 90,
+              "url": "https://science.ybu.edu.cn/info/1200/2210.htm"
+            }
+          ],
+          "text": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application, NENU–ECNU–YBU Joint Forum for Young Mathematicians, Department of Mathematics, College of Science, Yanbian University, 18 September 2026.",
+          "title": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application",
+          "year": 2026
+        },
         {
           "category": "talk",
           "detail": "Complex Geometry Seminar, IBS-CCG, 26 August 2026.",
@@ -1759,6 +1801,36 @@
     }
   ],
   "talks": [
+    {
+      "category": "talk",
+      "detail": "Birational Geometry Seminar Fall 2026, Fudan University, 13 November 2026.",
+      "links": [
+        {
+          "end": 42,
+          "label": "Birational Geometry Seminar Fall 2026",
+          "start": 5,
+          "url": "https://xiaoweijiang-math.github.io/FDU_BGS"
+        }
+      ],
+      "text": "TBA, Birational Geometry Seminar Fall 2026, Fudan University, 13 November 2026.",
+      "title": "TBA",
+      "year": 2026
+    },
+    {
+      "category": "talk",
+      "detail": "NENU–ECNU–YBU Joint Forum for Young Mathematicians, Department of Mathematics, College of Science, Yanbian University, 18 September 2026.",
+      "links": [
+        {
+          "end": 140,
+          "label": "NENU–ECNU–YBU Joint Forum for Young Mathematicians",
+          "start": 90,
+          "url": "https://science.ybu.edu.cn/info/1200/2210.htm"
+        }
+      ],
+      "text": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application, NENU–ECNU–YBU Joint Forum for Young Mathematicians, Department of Mathematics, College of Science, Yanbian University, 18 September 2026.",
+      "title": "Compact Kähler varieties with pseudo-effective tangent sheaf and a dynamical application",
+      "year": 2026
+    },
     {
       "category": "talk",
       "detail": "Complex Geometry Seminar, IBS-CCG, 26 August 2026.",
