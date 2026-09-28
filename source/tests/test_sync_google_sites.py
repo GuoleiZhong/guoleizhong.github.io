@@ -83,6 +83,31 @@ def tree_bytes(root: Path) -> dict[str, bytes]:
     return {str(p.relative_to(root)): p.read_bytes() for p in root.rglob('*') if p.is_file()}
 
 
+class FetchTests(unittest.TestCase):
+    def fetch_request(self, url: str) -> Request:
+        with patch.object(sync, 'build_opener') as build:
+            response = build.return_value.open.return_value.__enter__.return_value
+            response.status = 200
+            response.headers = {}
+            response.read.return_value = b'public response'
+            self.assertEqual(sync.fetch(url, 1024), b'public response')
+            return build.return_value.open.call_args.args[0]
+
+    def test_sites_html_is_fresh_to_avoid_expired_image_links(self):
+        with patch.object(sync.time, 'time_ns', return_value=123456789):
+            request = self.fetch_request(sync.BASE + 'home?existing=yes')
+        part = urlsplit(request.full_url)
+        self.assertEqual(part.hostname, 'sites.google.com')
+        self.assertEqual(part.path, '/view/guoleizhongshomepage/home')
+        self.assertEqual(parse_qs(part.query), {'existing': ['yes'], 'homepage_sync': ['123456789']})
+
+    def test_signed_image_and_document_urls_are_preserved(self):
+        for url in ('https://sites.google.com/sitesv-images-rt/signed-image=w1280',
+                    sync.drive_download_url('PublicDocument012345')):
+            with self.subTest(url=url):
+                self.assertEqual(self.fetch_request(url).full_url, url)
+
+
 class SyncIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
