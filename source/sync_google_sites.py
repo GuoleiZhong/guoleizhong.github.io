@@ -70,7 +70,13 @@ def fetch(url: str, limit: int) -> bytes:
     last: Exception | None = None
     for attempt in range(3):
         try:
-            request = Request(url, headers={"User-Agent": "GuoleiHomepageSync/1.0", "Accept-Encoding": "identity"})
+            request_url = url
+            part = urlsplit(url)
+            if part.hostname == "sites.google.com" and part.path.startswith("/view/"):
+                # Cached Sites HTML can contain expired, signed image URLs.
+                query = part.query + ("&" if part.query else "") + urlencode({"homepage_sync": time.time_ns()})
+                request_url = part._replace(query=query).geturl()
+            request = Request(request_url, headers={"User-Agent": "GuoleiHomepageSync/1.0", "Accept-Encoding": "identity"})
             with opener.open(request, timeout=45) as response:
                 if response.status != 200:
                     raise SyncError(f"Unexpected HTTP status {response.status}")
