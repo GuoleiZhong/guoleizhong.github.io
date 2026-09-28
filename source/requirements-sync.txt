@@ -1,0 +1,2 @@
+# Used only by the cloud synchronizer to optimize published images as WebP.
+Pillow==12.3.0

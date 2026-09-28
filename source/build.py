@@ -2,6 +2,7 @@
 """Build plain HTML with Python 3's standard library. No install is required."""
 from html import escape
 from pathlib import Path
+from datetime import datetime, timezone
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,14 +14,20 @@ def esc(value: object) -> str:
     return escape(str(value), quote=True)
 
 def anchor(href: str, label: str) -> str:
+    if not href.startswith(('https://', 'http://', 'mailto:', 'tel:', 'files/', 'assets/')):
+        return esc(label)
     return f'<a href="{esc(LOCAL.get(href, href))}">{esc(label)}</a>'
 
 def link_text(text: str, links: list) -> str:
     """Escape source text, linking original visible labels once."""
     candidates = []
     for item in links:
-        bracket = text.find('[' + item['label'] + ']')
-        pos = bracket + 1 if bracket >= 0 else text.find(item['label'])
+        source_start, source_end = item.get('start'), item.get('end')
+        if isinstance(source_start, int) and isinstance(source_end, int) and text[source_start:source_end] == item['label']:
+            pos = source_start
+        else:
+            bracket = text.find('[' + item['label'] + ']')
+            pos = bracket + 1 if bracket >= 0 else text.find(item['label'])
         if pos >= 0:
             candidates.append((pos, pos + len(item['label']), item))
     candidates.sort(key=lambda item: (item[0], -(item[1] - item[0])))
@@ -49,11 +56,15 @@ def page(filename: str, title: str, body: str, description: str) -> None:
 <header class="site-header"><div class="topbar"><a class="site-name" href="index.html">Guolei ZHONG</a><nav class="main-nav" aria-label="Main navigation">{nav}</nav></div>
 <div class="banner{' banner-home' if is_home else ''}"><h1>{heading}</h1></div></header>
 <main id="main" class="page-content">{body}</main>
-<footer class="site-footer">© 2026 Guolei ZHONG <span lang="zh-Hans">仲国磊</span></footer></body></html>'''
+<footer class="site-footer">© {datetime.now(timezone.utc).year} Guolei ZHONG <span lang="zh-Hans">仲国磊</span></footer></body></html>'''
     (ROOT / filename).write_text(doc, encoding='utf-8')
 
 def home() -> str:
     profile = DATA['profile']
+    if 'homeItems' in DATA:
+        bio = ''.join('<li>' + link_text(item['text'], item['links']) + '</li>' for item in DATA['homeItems'])
+        width, height = int(profile.get('portraitWidth', 1280)), int(profile.get('portraitHeight', 899))
+        return '<section aria-labelledby="about"><h2 class="about-title" id="about">' + esc(DATA.get('homeHeading', 'About me')) + '</h2><ul class="about-list">' + bio + '</ul></section><figure class="home-photo"><img src="assets/images/guolei-zhong-huangshan.webp" width="' + str(width) + '" height="' + str(height) + '" alt="Guolei Zhong." decoding="async"><figcaption>' + esc(profile.get('portraitCredit', '')) + '</figcaption></figure>'
     bio = ''.join('<li>' + link_text(text, profile['institutionLinks']) + '</li>' for text in profile['bio'][:3])
     bio += '<li>I am working on complex algebraic geometry and its interaction with dynamics. Here is my <a href="files/guolei-zhong-cv.pdf">CV</a>.</li>'
     bio += '<li>Email: <a href="mailto:glzhong@math.ecnu.edu.cn">glzhong[AT]math.ecnu.edu.cn</a>, <a href="mailto:zhongguolei@u.nus.edu">zhongguolei[AT]u.nus.edu</a> (to contact me, please replace [AT] with @)</li>'
@@ -65,17 +76,20 @@ def publication(item: dict) -> str:
     return f'<li id="{esc(item["id"])}">{link_text(text, item["links"])}</li>'
 
 def research() -> str:
-    result = '<section class="content-section"><h2 class="section-title">About my research interest:</h2><p>My research interests lie primarily in complex algebraic geometry and its interaction with dynamics.</p>' + profiles() + '</section>'
-    for status, heading, section_id in [('published', 'Publication (including accepted papers):', 'publications'), ('preprint', 'Preprints:', 'preprints')]:
+    intro = ''.join('<p>' + link_text(item['text'], item['links']) + '</p>' for item in DATA.get('researchIntroItems', [])) if 'researchIntroItems' in DATA else '<p>My research interests lie primarily in complex algebraic geometry and its interaction with dynamics.</p>'
+    intro += profiles()
+    result = '<section class="content-section"><h2 class="section-title">' + esc(DATA.get('researchHeading', 'About my research interest:')) + '</h2>' + intro + '</section>'
+    for status, heading, section_id in [('published', DATA.get('publicationHeading', 'Publication (including accepted papers):'), 'publications'), ('preprint', DATA.get('preprintHeading', 'Preprints:'), 'preprints')]:
         papers = [p for p in DATA['publications'] if (p['status'] == 'preprint') == (status == 'preprint')]
-        result += f'<section class="content-section" aria-labelledby="{section_id}"><h2 class="section-title" id="{section_id}">{heading}</h2><ol class="academic-list publication-list">' + ''.join(publication(p) for p in papers) + '</ol></section>'
-    result += '<section class="content-section" aria-labelledby="notes"><h2 class="section-title" id="notes">Other texts &amp; notes:</h2><ul class="academic-list notes-list">'
+        result += f'<section class="content-section" aria-labelledby="{section_id}"><h2 class="section-title" id="{section_id}">{esc(heading)}</h2><ol class="academic-list publication-list">' + ''.join(publication(p) for p in papers) + '</ol></section>'
+    result += '<section class="content-section" aria-labelledby="notes"><h2 class="section-title" id="notes">' + esc(DATA.get('notesHeading', 'Other texts & notes:')) + '</h2><ul class="academic-list notes-list">'
     return result + ''.join('<li>' + link_text(n['text'], n['links']) + '</li>' for n in DATA['notes']) + '</ul></section>'
 
 def talks() -> str:
     result = ''
-    for heading, items in [('Talks in 2026:', [t for t in DATA['talks'] if t['category'] == 'talk' and t['year'] == 2026]), ('Talks before 2026:', [t for t in DATA['talks'] if t['category'] == 'talk' and t['year'] != 2026]), ('Reading seminar:', [t for t in DATA['talks'] if t['category'] != 'talk'])]:
-        result += '<section class="content-section"><h2 class="section-title">' + heading + '</h2><ul class="academic-list notes-list">'
+    sections = [(section['heading'], section['items']) for section in DATA['talkSections']] if 'talkSections' in DATA else [('Talks in 2026:', [t for t in DATA['talks'] if t['category'] == 'talk' and t['year'] == 2026]), ('Talks before 2026:', [t for t in DATA['talks'] if t['category'] == 'talk' and t['year'] != 2026]), ('Reading seminar:', [t for t in DATA['talks'] if t['category'] != 'talk'])]
+    for heading, items in sections:
+        result += '<section class="content-section"><h2 class="section-title">' + esc(heading) + '</h2><ul class="academic-list notes-list">'
         result += ''.join('<li>' + link_text(t['text'], t['links']) + '</li>' for t in items) + '</ul></section>'
     return result
 
@@ -83,10 +97,10 @@ def teaching() -> str:
     return '<ul class="academic-list notes-list">' + ''.join('<li>' + link_text(t['text'], t['links']) + '</li>' for t in DATA['teaching']) + '</ul>'
 
 def links() -> str:
-    return '<section><h2 class="section-title">My collaborators</h2><ul class="academic-list collaborator-list">' + ''.join('<li>' + link_text(p['text'], p['links']) + '</li>' for p in DATA['collaborators']) + '</ul></section>'
+    return '<section><h2 class="section-title">' + esc(DATA.get('collaboratorHeading', 'My collaborators')) + '</h2><ul class="academic-list collaborator-list">' + ''.join('<li>' + link_text(p['text'], p['links']) + '</li>' for p in DATA['collaborators']) + '</ul></section>'
 
 if __name__ == '__main__':
-    page('index.html', 'Home', home(), 'Guolei Zhong, Research Professor at East China Normal University. Complex algebraic geometry and its interaction with dynamics.')
+    page('index.html', 'Home', home(), 'Academic homepage of Guolei Zhong. ' + DATA['profile'].get('researchInterest', 'Complex algebraic geometry and dynamics.'))
     page('research.html', 'Research', research(), 'Publications, preprints, and research notes by Guolei Zhong in complex algebraic geometry and dynamics.')
     page('talks.html', 'Talks', talks(), 'Research talks, lecture slides, and reading seminars by Guolei Zhong.')
     page('teaching.html', 'Teaching', teaching(), 'Teaching by Guolei Zhong at East China Normal University and the National University of Singapore.')

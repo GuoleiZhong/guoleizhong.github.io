@@ -1,0 +1,14 @@
+{
+  "images": {
+    "banner": {
+      "output_sha256": "aba8e5a5d6415995639ce44277959bfd3d95103baea9363b3f2c22d28ab6630b",
+      "source_sha256": "46665eb1268098126c94bef0e0a9bf51f2c67c07b167f41aec57f9961cc28929"
+    },
+    "portrait": {
+      "output_sha256": "f99903d7a836a0ff3737477e3332ee3206c0b583cb4d07457d9082aeb6906887",
+      "source_sha256": "15b895fd21d63e58e2dec24e45ed21fe945f76a3b6ea0bd62e0d8bce2b2ed629"
+    }
+  },
+  "last_successful_month": "2026-09",
+  "version": 1
+}
