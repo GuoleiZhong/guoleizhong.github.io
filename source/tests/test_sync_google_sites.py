@@ -289,6 +289,33 @@ class SyncIntegrationTests(unittest.TestCase):
         self.assertEqual((self.root / 'files/guolei-zhong-cv.pdf').read_bytes(), new_pdf)
         self.assertTrue({'index.html', 'source/content.json', 'source/local-files.json', 'files/guolei-zhong-cv.pdf'} <= set(changed))
 
+    def test_standalone_home_paragraph_is_synchronized_in_source_order(self):
+        notice = ('For students attending my lectures: I prefer to discuss mathematics by email. '
+                  'Please learn how to write a proper email before contacting me. '
+                  'You are also welcome to come to my office to ask questions. '
+                  'Unless the matter is urgent, I do not respond to messages on social media.')
+        marker = '<li><p role="presentation"><span>Phone:'
+        self.assertIn(marker, self.google.pages['home'])
+        self.google.pages['home'] = self.google.pages['home'].replace(
+            marker, '</ul><p>' + notice + '</p><ul>' + marker, 1)
+        changed = self.mirror()
+        self.assertIn('index.html', changed)
+        data = json.loads((self.root / 'source/content.json').read_text())
+        row = next(row for row in data['homeItems'] if row['text'] == notice)
+        self.assertEqual(row['kind'], 'paragraph')
+        html = (self.root / 'index.html').read_text()
+        self.assertIn('</ul><p class="about-list">' + notice + '</p><ul class="about-list">', html)
+        self.assertLess(html.index('zhongguolei[AT]u.nus.edu'), html.index(notice))
+        self.assertLess(html.index(notice), html.index('Phone:'))
+        self.assertNotIn('href="mailto:', html)
+        self.assertEqual(self.mirror(), [])
+        revised = notice.replace('proper email', 'clear email')
+        self.google.pages['home'] = self.google.pages['home'].replace(notice, revised)
+        self.mirror()
+        html = (self.root / 'index.html').read_text()
+        self.assertIn(revised, html)
+        self.assertNotIn(notice, html)
+
     def test_replaced_cv_and_archived_old_cv_keep_separate_files(self):
         data = json.loads((self.root / 'source/content.json').read_text())
         old_cv = data['profile']['cv']
