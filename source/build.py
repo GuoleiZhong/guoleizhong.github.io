@@ -68,9 +68,22 @@ def page(filename: str, title: str, body: str, description: str) -> None:
 def home() -> str:
     profile = DATA['profile']
     if 'homeItems' in DATA:
-        bio = ''.join('<li>' + link_text(item['text'], item['links'], plain_emails=True) + '</li>' for item in DATA['homeItems'])
+        parts, list_items = [], []
+        for item in DATA['homeItems']:
+            text = link_text(item['text'], item['links'], plain_emails=True)
+            if item.get('kind') == 'paragraph':
+                if list_items:
+                    parts.append('<ul class="about-list">' + ''.join(list_items) + '</ul>')
+                    list_items = []
+                # Use the same indentation/spacing as the adjacent list text.
+                parts.append('<p class="about-list">' + text + '</p>')
+            else:
+                list_items.append('<li>' + text + '</li>')
+        if list_items:
+            parts.append('<ul class="about-list">' + ''.join(list_items) + '</ul>')
+        bio = ''.join(parts)
         width, height = int(profile.get('portraitWidth', 1280)), int(profile.get('portraitHeight', 899))
-        return '<section aria-labelledby="about"><h2 class="about-title" id="about">' + esc(DATA.get('homeHeading', 'About me')) + '</h2><ul class="about-list">' + bio + '</ul></section><figure class="home-photo"><img src="assets/images/guolei-zhong-huangshan.webp" width="' + str(width) + '" height="' + str(height) + '" alt="Guolei Zhong." decoding="async"><figcaption>' + esc(profile.get('portraitCredit', '')) + '</figcaption></figure>'
+        return '<section aria-labelledby="about"><h2 class="about-title" id="about">' + esc(DATA.get('homeHeading', 'About me')) + '</h2>' + bio + '</section><figure class="home-photo"><img src="assets/images/guolei-zhong-huangshan.webp" width="' + str(width) + '" height="' + str(height) + '" alt="Guolei Zhong." decoding="async"><figcaption>' + esc(profile.get('portraitCredit', '')) + '</figcaption></figure>'
     bio = ''.join('<li>' + link_text(text, profile['institutionLinks']) + '</li>' for text in profile['bio'][:3])
     bio += '<li>I am working on complex algebraic geometry and its interaction with dynamics. Here is my <a href="files/guolei-zhong-cv.pdf">CV</a>.</li>'
     bio += '<li>Email: glzhong[AT]math.ecnu.edu.cn, zhongguolei[AT]u.nus.edu (to contact me, please replace [AT] with @)</li>'

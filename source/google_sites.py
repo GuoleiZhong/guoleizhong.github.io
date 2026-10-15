@@ -209,8 +209,11 @@ def home_data(root: Node, page_blocks: list[Node], previous: dict) -> dict:
         raise ParseError('home: missing About me section')
     about_items = []
     for node in page_blocks[about + 1:]:
-        if node.tag == 'li':
-            about_items.append(item(node))
+        if node.tag in ('li', 'p'):
+            row = item(node)
+            if node.tag == 'p':
+                row['kind'] = 'paragraph'
+            about_items.append(row)
         elif node.tag.startswith('h'):
             break
     ensure_items(about_items, 'home/About me')
