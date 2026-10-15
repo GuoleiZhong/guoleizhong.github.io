@@ -260,14 +260,15 @@ class SyncIntegrationTests(unittest.TestCase):
         pdf_requests = [url for url, _ in self.google.requests if 'drive.usercontent.google.com' in url]
         self.assertEqual(len(pdf_requests), len(self.google.pdfs))
 
-    def test_email_addresses_link_to_mail_instead_of_partial_domain(self):
+    def test_email_addresses_remain_plain_text_without_domain_or_mail_links(self):
         for separator in ('[AT]', '[At]', '@'):
             with self.subTest(separator=separator):
                 self.google.pages['home'] = self.pages['home'].replace('[AT]', separator)
                 self.mirror()
                 html = (self.root / 'index.html').read_text()
                 for local, domain in (('glzhong', 'math.ecnu.edu.cn'), ('zhongguolei', 'u.nus.edu')):
-                    self.assertIn(f'<a href="mailto:{local}@{domain}">{local}{separator}{domain}</a>', html)
+                    self.assertIn(f'{local}{separator}{domain}', html)
+                self.assertNotIn('href="mailto:', html)
                 self.assertNotIn('href="http://u.nus.edu"', html)
                 self.assertIn(f'(to contact me, please replace {separator} with @)', html)
                 self.assertIn('href="https://www.nus.edu.sg">National University of Singapore</a>', html)
