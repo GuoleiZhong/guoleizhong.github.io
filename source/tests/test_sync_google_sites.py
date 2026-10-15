@@ -4,6 +4,7 @@ from __future__ import annotations
 from contextlib import redirect_stdout
 from copy import deepcopy
 from datetime import datetime, timezone
+from http.client import IncompleteRead
 from io import BytesIO, StringIO
 import json
 from pathlib import Path
@@ -12,7 +13,8 @@ import shutil
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
+from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlsplit
 from urllib.request import Request
 
@@ -84,6 +86,14 @@ def tree_bytes(root: Path) -> dict[str, bytes]:
 
 
 class FetchTests(unittest.TestCase):
+    def response(self, data: bytes = b'complete response', headers: dict | None = None) -> MagicMock:
+        response = MagicMock()
+        response.__enter__.return_value = response
+        response.status = 200
+        response.headers = headers or {}
+        response.read.return_value = data
+        return response
+
     def fetch_request(self, url: str) -> Request:
         with patch.object(sync, 'build_opener') as build:
             response = build.return_value.open.return_value.__enter__.return_value
@@ -106,6 +116,108 @@ class FetchTests(unittest.TestCase):
                     sync.drive_download_url('PublicDocument012345')):
             with self.subTest(url=url):
                 self.assertEqual(self.fetch_request(url).full_url, url)
+
+    def test_transient_http_recovery_honors_bounded_retry_after(self):
+        url = sync.BASE + 'home'
+        for retry_after, expected_wait in [('12', 12), ('3600', 30), ('invalid', 2),
+                                           ('Thu, 15 Oct 2026 04:00:12 GMT', 12)]:
+            with self.subTest(retry_after=retry_after), patch.object(sync, 'build_opener') as build, \
+                    patch.object(sync.time, 'sleep') as sleep, \
+                    patch.object(sync.time, 'time', return_value=datetime(2026, 10, 15, 4, tzinfo=timezone.utc).timestamp()):
+                failure = HTTPError(url, 429, 'Too Many Requests', {'Retry-After': retry_after}, None)
+                build.return_value.open.side_effect = [failure, self.response()]
+                self.assertEqual(sync.fetch(url, 1024), b'complete response')
+                self.assertEqual(build.return_value.open.call_count, 2)
+                sleep.assert_called_once_with(expected_wait)
+
+    def test_permanent_http_failure_is_labeled_without_exposing_signed_url(self):
+        url = 'https://sites.google.com/sitesv-images-rt/secret-signed-path?token=secret-query'
+        for status in (403, 404):
+            with self.subTest(status=status), patch.object(sync, 'build_opener') as build, \
+                    patch.object(sync.time, 'sleep') as sleep:
+                build.return_value.open.side_effect = HTTPError(url, status, url, {}, None)
+                with self.assertRaises(sync.DownloadError) as caught:
+                    sync.fetch(url, 1024)
+                error = caught.exception
+                self.assertEqual(error.status, status)
+                self.assertFalse(error.transient)
+                self.assertIn(f'HTTP {status}', str(error))
+                self.assertIn('Google image at sites.google.com', str(error))
+                self.assertNotIn('secret', str(error))
+                self.assertEqual(build.return_value.open.call_count, 1)
+                sleep.assert_not_called()
+
+    def test_exhausted_http_retries_report_page_and_status_without_final_sleep(self):
+        url = sync.BASE + 'research?private-query=secret'
+        with patch.object(sync, 'build_opener') as build, patch.object(sync.time, 'sleep') as sleep:
+            build.return_value.open.side_effect = HTTPError(url, 503, url, {}, None)
+            with self.assertRaises(sync.DownloadError) as caught:
+                sync.fetch(url, 1024)
+            self.assertEqual(caught.exception.status, 503)
+            self.assertTrue(caught.exception.transient)
+            self.assertIn('Google Sites research page', str(caught.exception))
+            self.assertIn('HTTP 503', str(caught.exception))
+            self.assertNotIn('secret', str(caught.exception))
+            self.assertEqual(build.return_value.open.call_count, 3)
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], [2, 4])
+
+    def test_transport_failures_retry_and_recover_without_leaking_details(self):
+        url = sync.drive_download_url('PublicDocument012345')
+        for failure in (URLError('secret signed URL'), TimeoutError('secret signed URL'),
+                        OSError('secret signed URL'), IncompleteRead(b'secret partial bytes', 100)):
+            with self.subTest(failure=type(failure).__name__), patch.object(sync, 'build_opener') as build, \
+                    patch.object(sync.time, 'sleep') as sleep:
+                first = self.response()
+                first.read.side_effect = failure
+                build.return_value.open.side_effect = [first, self.response()]
+                self.assertEqual(sync.fetch(url, 1024), b'complete response')
+                self.assertEqual(build.return_value.open.call_count, 2)
+                sleep.assert_called_once_with(2)
+                build.return_value.open.reset_mock()
+                sleep.reset_mock()
+                build.return_value.open.side_effect = failure
+                with self.assertRaises(sync.DownloadError) as caught:
+                    sync.fetch(url, 1024)
+                self.assertTrue(caught.exception.transient)
+                self.assertIsNone(caught.exception.status)
+                self.assertIn('Google Drive document', str(caught.exception))
+                self.assertNotIn('secret', str(caught.exception))
+                self.assertEqual(build.return_value.open.call_count, 3)
+                self.assertEqual(sleep.call_count, 2)
+
+    def test_empty_and_short_responses_retry_but_never_return_partial_bytes(self):
+        for data, headers in [(b'', {}), (b'partial', {'Content-Length': '100'})]:
+            with self.subTest(data=data), patch.object(sync, 'build_opener') as build, \
+                    patch.object(sync.time, 'sleep') as sleep:
+                build.return_value.open.side_effect = [self.response(data, headers), self.response()]
+                self.assertEqual(sync.fetch(sync.BASE + 'home', 1024), b'complete response')
+                sleep.assert_called_once_with(2)
+                build.return_value.open.reset_mock()
+                sleep.reset_mock()
+                build.return_value.open.side_effect = None
+                build.return_value.open.return_value = self.response(data, headers)
+                with self.assertRaises(sync.DownloadError) as caught:
+                    sync.fetch(sync.BASE + 'home', 1024)
+                self.assertTrue(caught.exception.transient)
+                self.assertEqual(build.return_value.open.call_count, 3)
+                self.assertEqual(sleep.call_count, 2)
+
+    def test_oversized_or_invalid_length_is_rejected_without_retry(self):
+        cases = [(b'large response', {}, 4), (b'partial', {'Content-Length': '2048'}, 1024),
+                 (b'partial', {'Content-Length': '-1'}, 1024),
+                 (b'partial', {'Content-Length': 'invalid'}, 1024)]
+        for data, headers, limit in cases:
+            with self.subTest(headers=headers, limit=limit), patch.object(sync, 'build_opener') as build, \
+                    patch.object(sync.time, 'sleep') as sleep:
+                response = self.response(data, headers)
+                build.return_value.open.return_value = response
+                with self.assertRaises(sync.DownloadError) as caught:
+                    sync.fetch(sync.BASE + 'home', limit)
+                self.assertFalse(caught.exception.transient)
+                self.assertEqual(build.return_value.open.call_count, 1)
+                sleep.assert_not_called()
+                if headers:
+                    response.read.assert_not_called()
 
 
 class SyncIntegrationTests(unittest.TestCase):
@@ -147,6 +259,18 @@ class SyncIntegrationTests(unittest.TestCase):
         self.assertEqual(tree_bytes(self.root), before)
         pdf_requests = [url for url, _ in self.google.requests if 'drive.usercontent.google.com' in url]
         self.assertEqual(len(pdf_requests), len(self.google.pdfs))
+
+    def test_email_addresses_link_to_mail_instead_of_partial_domain(self):
+        for separator in ('[AT]', '[At]', '@'):
+            with self.subTest(separator=separator):
+                self.google.pages['home'] = self.pages['home'].replace('[AT]', separator)
+                self.mirror()
+                html = (self.root / 'index.html').read_text()
+                for local, domain in (('glzhong', 'math.ecnu.edu.cn'), ('zhongguolei', 'u.nus.edu')):
+                    self.assertIn(f'<a href="mailto:{local}@{domain}">{local}{separator}{domain}</a>', html)
+                self.assertNotIn('href="http://u.nus.edu"', html)
+                self.assertIn(f'(to contact me, please replace {separator} with @)', html)
+                self.assertIn('href="https://www.nus.edu.sg">National University of Singapore</a>', html)
 
     def test_changed_text_and_new_cv_url_are_published_together(self):
         old = json.loads((self.root / 'source/content.json').read_text())
@@ -300,6 +424,82 @@ class SyncIntegrationTests(unittest.TestCase):
         self.assertEqual(state['last_successful_month'], '2026-10')
         self.assertEqual((self.root / 'source/content.json').read_bytes(), old_content)
         self.assertEqual(self.mirror(now=datetime(2026, 10, 5, tzinfo=timezone.utc)), [])
+
+    def test_images_are_downloaded_before_documents(self):
+        self.mirror()
+        urls = [url for url, _ in self.google.requests]
+        first_pdf = next(index for index, url in enumerate(urls) if 'drive.usercontent.google.com' in url)
+        for url in self.google.images:
+            self.assertLess(urls.index(url), first_pdf)
+
+    def test_expired_image_links_refresh_home_and_current_cv_together(self):
+        original = parse_pages(self.google.pages)
+        portrait = original['profile']['portrait']
+        fresh_portrait = 'https://sites.google.com/sitesv-images-rt/fresh-portrait=w1280'
+        new_id = 'RefreshedHomeCurriculumVitae012345'
+        new_cv = 'https://drive.google.com/file/d/' + new_id + '/view'
+        self.google.pdfs[new_id] = pdf_bytes('CV from refreshed home')
+        calls = []
+
+        def download(url, limit):
+            calls.append(url)
+            if url == portrait:
+                self.google.pages['home'] = (self.google.pages['home']
+                    .replace(portrait, fresh_portrait)
+                    .replace(original['profile']['cv'], new_cv)
+                    .replace('Room 221', 'Room 321'))
+                self.google.images[fresh_portrait] = self.google.images[portrait]
+                raise sync.DownloadError('Google image: HTTP 403', status=403)
+            return self.google(url, limit)
+
+        with redirect_stdout(StringIO()):
+            sync.mirror(self.root, download, now=SEPTEMBER)
+        self.assertEqual(calls.count(sync.BASE + 'home'), 2)
+        self.assertEqual(calls.count(portrait), 1)
+        self.assertIn(fresh_portrait, calls)
+        self.assertIn('Room 321', (self.root / 'index.html').read_text())
+        self.assertEqual((self.root / 'files/guolei-zhong-cv.pdf').read_bytes(), self.google.pdfs[new_id])
+
+    def test_persistent_image_denial_is_bounded_and_preserves_site(self):
+        before = tree_bytes(self.root)
+        portrait = parse_pages(self.google.pages)['profile']['portrait']
+        calls = []
+
+        def download(url, limit):
+            calls.append(url)
+            if url == portrait:
+                raise sync.DownloadError('Google image: HTTP 404', status=404)
+            return self.google(url, limit)
+
+        with redirect_stdout(StringIO()), self.assertRaisesRegex(sync.SyncError, 'homepage portrait.*HTTP 404'):
+            sync.mirror(self.root, download, now=SEPTEMBER)
+        self.assertEqual(calls.count(sync.BASE + 'home'), 2)
+        self.assertEqual(calls.count(portrait), 2)
+        self.assertEqual(tree_bytes(self.root), before)
+
+    def test_refresh_does_not_trust_an_already_replaced_staged_image(self):
+        original = parse_pages(self.google.pages)
+        portrait, banner = original['profile']['portrait'], original['bannerUrl']
+        picture = BytesIO()
+        Image.new('RGB', (64, 48), (180, 90, 25)).save(picture, 'PNG')
+        original_bytes = self.google.images[portrait]
+        before = (self.root / 'assets/images/guolei-zhong-huangshan.webp').read_bytes()
+        self.google.images[portrait] = picture.getvalue()
+        banner_attempts = 0
+
+        def download(url, limit):
+            nonlocal banner_attempts
+            if url == banner:
+                banner_attempts += 1
+                if banner_attempts == 1:
+                    self.google.images[portrait] = original_bytes
+                    raise sync.DownloadError('Google image: HTTP 403', status=403)
+            return self.google(url, limit)
+
+        with redirect_stdout(StringIO()):
+            sync.mirror(self.root, download, now=SEPTEMBER)
+        self.assertEqual(banner_attempts, 2)
+        self.assertEqual((self.root / 'assets/images/guolei-zhong-huangshan.webp').read_bytes(), before)
 
 
 if __name__ == '__main__':
