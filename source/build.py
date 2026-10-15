@@ -19,7 +19,7 @@ def anchor(href: str, label: str) -> str:
         return esc(label)
     return f'<a href="{esc(LOCAL.get(href, href))}">{esc(label)}</a>'
 
-def link_text(text: str, links: list, *, link_emails: bool = False) -> str:
+def link_text(text: str, links: list, *, plain_emails: bool = False) -> str:
     """Escape source text, linking original visible labels once."""
     candidates = []
     for item in links:
@@ -31,13 +31,11 @@ def link_text(text: str, links: list, *, link_emails: bool = False) -> str:
             pos = bracket + 1 if bracket >= 0 else text.find(item['label'])
         if pos >= 0:
             candidates.append((pos, pos + len(item['label']), item))
-    if link_emails:
-        # Google Sites may link only an email's domain as an unrelated website.
+    if plain_emails:
+        # Keep contact addresses exactly as published, without email/domain links.
         for match in re.finditer(r'[A-Z0-9._%+\-]+(?:\[AT\]|@)[A-Z0-9.\-]+\.[A-Z]{2,}', text, flags=re.I):
             start, stop = match.span()
             candidates = [item for item in candidates if item[1] <= start or item[0] >= stop]
-            address = re.sub(r'\[AT\]', '@', match.group(), flags=re.I)
-            candidates.append((start, stop, {'url': 'mailto:' + address, 'label': match.group()}))
     candidates.sort(key=lambda item: (item[0], -(item[1] - item[0])))
     end, result = 0, ''
     for start, stop, item in candidates:
@@ -70,12 +68,12 @@ def page(filename: str, title: str, body: str, description: str) -> None:
 def home() -> str:
     profile = DATA['profile']
     if 'homeItems' in DATA:
-        bio = ''.join('<li>' + link_text(item['text'], item['links'], link_emails=True) + '</li>' for item in DATA['homeItems'])
+        bio = ''.join('<li>' + link_text(item['text'], item['links'], plain_emails=True) + '</li>' for item in DATA['homeItems'])
         width, height = int(profile.get('portraitWidth', 1280)), int(profile.get('portraitHeight', 899))
         return '<section aria-labelledby="about"><h2 class="about-title" id="about">' + esc(DATA.get('homeHeading', 'About me')) + '</h2><ul class="about-list">' + bio + '</ul></section><figure class="home-photo"><img src="assets/images/guolei-zhong-huangshan.webp" width="' + str(width) + '" height="' + str(height) + '" alt="Guolei Zhong." decoding="async"><figcaption>' + esc(profile.get('portraitCredit', '')) + '</figcaption></figure>'
     bio = ''.join('<li>' + link_text(text, profile['institutionLinks']) + '</li>' for text in profile['bio'][:3])
     bio += '<li>I am working on complex algebraic geometry and its interaction with dynamics. Here is my <a href="files/guolei-zhong-cv.pdf">CV</a>.</li>'
-    bio += '<li>Email: <a href="mailto:glzhong@math.ecnu.edu.cn">glzhong[AT]math.ecnu.edu.cn</a>, <a href="mailto:zhongguolei@u.nus.edu">zhongguolei[AT]u.nus.edu</a> (to contact me, please replace [AT] with @)</li>'
+    bio += '<li>Email: glzhong[AT]math.ecnu.edu.cn, zhongguolei[AT]u.nus.edu (to contact me, please replace [AT] with @)</li>'
     bio += '<li>Phone: +86 021-54342646-621</li><li>Current address: ' + esc(profile['address']) + '</li>'
     return '<section aria-labelledby="about"><h2 class="about-title" id="about">About me</h2><ul class="about-list">' + bio + '</ul></section><figure class="home-photo"><img src="assets/images/guolei-zhong-huangshan.webp" width="1280" height="899" alt="Guolei Zhong on Mount Huangshan, China." decoding="async"><figcaption>' + esc(profile['portraitCredit']) + '</figcaption></figure>'
 
