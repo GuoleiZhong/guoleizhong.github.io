@@ -5,10 +5,13 @@ from __future__ import annotations
 import argparse
 from collections.abc import Callable
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import hashlib
+from http.client import IncompleteRead
 from html.parser import HTMLParser
 from io import BytesIO
 import json
+import math
 from pathlib import Path
 import re
 import runpy
@@ -39,6 +42,15 @@ class SyncError(RuntimeError):
     """A failed sync must leave the published version unchanged."""
 
 
+class DownloadError(SyncError):
+    """A public download failure, with details for selective recovery."""
+
+    def __init__(self, message: str, *, status: int | None = None, transient: bool = False) -> None:
+        super().__init__(message)
+        self.status = status
+        self.transient = transient
+
+
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -62,13 +74,50 @@ class SafeRedirect(HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+def download_label(url: str) -> str:
+    """Identify a resource without exposing signed paths or query parameters."""
+    part = urlsplit(url)
+    host = part.hostname or "unknown host"
+    if host == "sites.google.com" and part.path.startswith("/view/"):
+        page = part.path.rstrip("/").rsplit("/", 1)[-1]
+        role = f"Google Sites {page} page" if page in PAGES else "Google Sites page"
+    elif host in {"drive.google.com", "drive.usercontent.google.com"}:
+        role = "Google Drive document"
+    else:
+        role = "Google image"
+    return f"{role} at {host}"
+
+
+def retry_delay(attempt: int, retry_after: str | None) -> float:
+    """Honor Retry-After, with at most 30 seconds between bounded attempts."""
+    delay = float(2 ** (attempt + 1))
+    if retry_after:
+        try:
+            seconds = float(retry_after)
+        except ValueError:
+            try:
+                date = parsedate_to_datetime(retry_after)
+                if date.tzinfo is None:
+                    date = date.replace(tzinfo=timezone.utc)
+                seconds = date.timestamp() - time.time()
+            except (TypeError, ValueError, OverflowError):
+                seconds = 0
+        if math.isfinite(seconds):
+            delay = max(delay, seconds)
+    return min(delay, 30.0)
+
+
 def fetch(url: str, limit: int) -> bytes:
     """Fetch public resources only, with bounded size, redirects, retries and timeouts."""
     if not allowed_google_url(url):
         raise SyncError("Unsupported download host or URL")
+    label = download_label(url)
     opener = build_opener(SafeRedirect())
-    last: Exception | None = None
+    last: DownloadError | None = None
+    cause: Exception | None = None
+    transient_statuses = {408, 429, 500, 502, 503, 504}
     for attempt in range(3):
+        retry_after = None
         try:
             request_url = url
             part = urlsplit(url)
@@ -79,23 +128,44 @@ def fetch(url: str, limit: int) -> bytes:
             request = Request(request_url, headers={"User-Agent": "GuoleiHomepageSync/1.0", "Accept-Encoding": "identity"})
             with opener.open(request, timeout=45) as response:
                 if response.status != 200:
-                    raise SyncError(f"Unexpected HTTP status {response.status}")
+                    retry_after = response.headers.get("Retry-After")
+                    raise DownloadError(f"{label}: HTTP {response.status}", status=response.status,
+                                        transient=response.status in transient_statuses)
                 declared = response.headers.get("Content-Length")
-                if declared and int(declared) > limit:
-                    raise SyncError("Remote resource exceeds the configured size limit")
+                try:
+                    expected = int(declared) if declared is not None else None
+                except ValueError as exc:
+                    raise DownloadError(f"{label}: invalid Content-Length") from exc
+                if expected is not None and expected < 0:
+                    raise DownloadError(f"{label}: invalid Content-Length")
+                if expected is not None and expected > limit:
+                    raise DownloadError(f"{label}: remote resource exceeds the configured size limit")
                 data = response.read(limit + 1)
-                if len(data) > limit or not data:
-                    raise SyncError("Empty or oversized remote resource")
+                if len(data) > limit:
+                    raise DownloadError(f"{label}: remote resource exceeds the configured size limit")
+                if not data:
+                    raise DownloadError(f"{label}: empty response", transient=True)
+                if expected is not None and len(data) != expected:
+                    raise DownloadError(f"{label}: incomplete response (expected {expected} bytes, received {len(data)})",
+                                        transient=True)
                 return data
         except HTTPError as exc:
+            cause = exc
+            last = DownloadError(f"{label}: HTTP {exc.code}", status=exc.code,
+                                 transient=exc.code in transient_statuses)
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            exc.close()
+        except DownloadError as exc:
             last = exc
-            if exc.code not in {408, 429, 500, 502, 503, 504}:
-                break
-        except (URLError, TimeoutError, OSError) as exc:
-            last = exc
-        if attempt < 2:
-            time.sleep(2 ** attempt)
-    raise SyncError(f"Unable to fetch public resource ({type(last).__name__})") from last
+            cause = exc.__cause__
+        except (URLError, TimeoutError, OSError, IncompleteRead) as exc:
+            cause = exc
+            last = DownloadError(f"{label}: {type(exc).__name__} during download", transient=True)
+        assert last is not None
+        if not last.transient or attempt == 2:
+            raise last from cause
+        time.sleep(retry_delay(attempt, retry_after))
+    raise AssertionError("Download attempts exhausted without a result")
 
 
 def drive_id(url: str) -> str | None:
@@ -185,7 +255,8 @@ def sync_image(stage: Path, source_url: str, destination: str, old_state: dict,
     source_hash = digest(data)
     target = stage / destination
     # Signed Google image URLs change over time. Compare image bytes, not URLs.
-    if old_state.get("source_sha256") == source_hash and target.exists():
+    if (old_state.get("source_sha256") == source_hash and target.exists()
+            and old_state.get("output_sha256") == digest(target.read_bytes())):
         with Image.open(target) as previous:
             return old_state, previous.size
     try:
@@ -260,14 +331,29 @@ def mirror(root: Path, downloader: Callable[[str, int], bytes] = fetch,
         for path in stage.rglob("*"):
             if path.is_symlink():
                 raise SyncError("Symlinks are not supported in the site")
-        mapping = sync_documents(stage, content, read_json(stage / "source/local-files.json"), downloader)
         images = state.get("images", {})
-        portrait_url = content["profile"].get("portrait", "")
-        banner_url = content.get("bannerUrl", "")
-        if not portrait_url or not banner_url:
-            raise SyncError("Missing homepage image or banner")
-        portrait_state, portrait_size = sync_image(stage, portrait_url, "assets/images/guolei-zhong-huangshan.webp", images.get("portrait", {}), downloader)
-        banner_state, _ = sync_image(stage, banner_url, "assets/images/banner.webp", images.get("banner", {}), downloader)
+        # Use signed image links promptly, before downloading all linked PDFs.
+        for image_attempt in range(2):
+            portrait_url = content["profile"].get("portrait", "")
+            banner_url = content.get("bannerUrl", "")
+            if not portrait_url or not banner_url:
+                raise SyncError("Missing homepage image or banner")
+            role = "portrait"
+            try:
+                portrait_state, portrait_size = sync_image(stage, portrait_url, "assets/images/guolei-zhong-huangshan.webp", images.get("portrait", {}), downloader)
+                role = "banner"
+                banner_state, _ = sync_image(stage, banner_url, "assets/images/banner.webp", images.get("banner", {}), downloader)
+                break
+            except DownloadError as exc:
+                if image_attempt or exc.status not in {403, 404}:
+                    raise SyncError(f"Could not update homepage {role}: {exc}") from exc
+                print(f"Homepage {role} returned HTTP {exc.status}; refreshing the public home page once for fresh image links.")
+                pages["home"] = downloader(BASE + "home", MAX_PAGE).decode("utf-8")
+                # The refreshed home may also update the CV or contact details.
+                # Reparse it before downloading documents or generating any page.
+                content = parse_pages(pages, previous=old)
+                guard_item_loss(old, content, allow_large_removal)
+        mapping = sync_documents(stage, content, read_json(stage / "source/local-files.json"), downloader)
         content["profile"]["portrait"] = "assets/images/guolei-zhong-huangshan.webp"
         content["profile"]["portraitWidth"], content["profile"]["portraitHeight"] = portrait_size
         content["bannerUrl"] = "assets/images/banner.webp"
