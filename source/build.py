@@ -5,10 +5,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 import json
 import re
+from hashlib import sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'source/content.json').read_text(encoding='utf-8'))
 LOCAL = json.loads((ROOT / 'source/local-files.json').read_text(encoding='utf-8'))
+STYLE_VERSION = sha256((ROOT / 'assets/style.css').read_bytes()).hexdigest()[:12]
 NAV = [('index.html', 'Home'), ('research.html', 'Research'), ('talks.html', 'Talks'), ('teaching.html', 'Teaching'), ('links.html', 'Links')]
 
 def esc(value: object) -> str:
@@ -57,7 +59,7 @@ def page(filename: str, title: str, body: str, description: str) -> None:
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{doc_title}</title><meta name="description" content="{esc(description)}"><meta name="author" content="Guolei Zhong">
 <meta name="theme-color" content="#29465d"><meta property="og:type" content="website"><meta property="og:title" content="{doc_title}"><meta property="og:description" content="{esc(description)}">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="assets/style.css"><link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="stylesheet" href="assets/style.css?v={STYLE_VERSION}"><link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="topbar"><a class="site-name" href="index.html">Guolei ZHONG</a><nav class="main-nav" aria-label="Main navigation">{nav}</nav></div>
 <div class="banner{' banner-home' if is_home else ''}"><h1>{heading}</h1></div></header>
