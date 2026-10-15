@@ -4,6 +4,8 @@ A static version of the [Google Sites homepage](https://sites.google.com/view/gu
 
 **Automatic synchronization is enabled.** The first cloud synchronization and GitHub Pages deployment succeeded on 28 September 2026. [Verified workflow run](https://github.com/GuoleiZhong/guoleizhong.github.io/actions/runs/36396778395). The repository checks Google Sites every six hours and also supports manual runs.
 
+Synchronization reliability and complete contact email links were repaired on 15 October 2026. All 34 regression tests, the cloud sync and Pages deployment passed; the five live pages match the verified build. [Repair verification run](https://github.com/GuoleiZhong/guoleizhong.github.io/actions/runs/38692246640).
+
 ## Update content in Google Sites
 
 Google Sites is the single source for the homepage's content. Edit the original site and click **Publish**. Drafts are not synchronized. GitHub Actions checks the public site every six hours, without needing this computer to stay on. The target check times in China are 02:17, 08:17, 14:17 and 20:17; GitHub may delay scheduled runs.
@@ -23,6 +25,8 @@ The setup below is already active in this repository. To reproduce it in another
 Use **Run workflow** whenever an immediate check or a deployment retry is needed. If a deliberate edit removes more than 40% of a content collection, review the source first, then use the manual `allow_large_removal` option for that specific change.
 
 All parsing, downloads, tests and local-link validation must pass before publication. A failed sync preserves the last deployed website; its error is visible in the Actions run. Unchanged scheduled checks do not redeploy. A monthly successful-operation record in `source/sync-state.json` creates at most one maintenance commit per month when content is unchanged. It documents successful operation and provides repository activity; prolonged failures or manually disabled Actions still need attention. GitHub can disable schedules after 60 days without repository activity.
+
+Downloads retry transient HTTP and network errors with bounded delays. If a homepage image returns HTTP 403 or 404, the synchronizer reloads the public homepage once to obtain fresh signed image URLs. Failure messages identify the resource category and HTTP status or error type without exposing signed URLs. The older failed run recorded only `HTTPError`, so its precise HTTP status is unknown. The renderer also converts complete email addresses in the homepage contact text into `mailto:` links.
 
 The workflow uses GitHub's short-lived token and pinned official actions. No Google password or personal access token is required. New Google Sites has no supported Sites API, so this implementation reads public published pages. See the official [Google Sites API limitations](https://developers.google.com/workspace/sites), [GitHub schedule behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule), and [Pages custom workflow setup](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
