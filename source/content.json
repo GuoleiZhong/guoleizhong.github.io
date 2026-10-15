@@ -290,13 +290,13 @@
     {
       "links": [
         {
-          "end": 60,
+          "end": 61,
           "label": "u.nus.edu",
-          "start": 51,
+          "start": 52,
           "url": "http://u.nus.edu"
         }
       ],
-      "text": "Email: glzhong[AT]math.ecnu.edu.cn, zhongguolei[AT]u.nus.edu (to contact me, please replace [AT] with @)"
+      "text": "E-mail: glzhong[AT]math.ecnu.edu.cn, zhongguolei[AT]u.nus.edu (to contact me, please replace [AT] with @)"
     },
     {
       "links": [],
@@ -973,7 +973,7 @@
       "text": "My research interests lie primarily in complex algebraic geometry and its interaction with dynamics."
     }
   ],
-  "retrieved": "2026-09-28",
+  "retrieved": "2026-10-15",
   "source": "https://sites.google.com/view/guoleizhongshomepage/home",
   "talkSections": [
     {
