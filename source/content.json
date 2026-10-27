@@ -454,9 +454,28 @@
   "publications": [
     {
       "appendixBy": null,
+      "citation": "Taiwanese Journal of Mathematics -- Special issue AGEA 2025 (to appear).",
+      "coauthors": "Shin-ichi Matsumura",
+      "id": "paper-01",
+      "links": [
+        {
+          "end": 178,
+          "label": "arXiv",
+          "start": 173,
+          "url": "https://arxiv.org/abs/2609.07069v1"
+        }
+      ],
+      "sourceOrder": 1,
+      "sourceText": "(with Shin-ichi Matsumura) A note on compact Kähler varieties with pseudo-effective tangent sheaf, Taiwanese Journal of Mathematics -- Special issue AGEA 2025 (to appear). [arXiv]",
+      "status": "accepted",
+      "title": "A note on compact Kähler varieties with pseudo-effective tangent sheaf",
+      "year": 2025
+    },
+    {
+      "appendixBy": null,
       "citation": "Journal of Algebraic Geometry (to appear).",
       "coauthors": "Jun-Muk Hwang",
-      "id": "paper-01",
+      "id": "paper-02",
       "links": [
         {
           "end": 124,
@@ -465,7 +484,7 @@
           "url": "https://arxiv.org/abs/2607.10375"
         }
       ],
-      "sourceOrder": 1,
+      "sourceOrder": 2,
       "sourceText": "(with Jun-Muk Hwang) Holomorphic symplectic geometry of elliptic surfaces, Journal of Algebraic Geometry (to appear). [arXiv]",
       "status": "accepted",
       "title": "Holomorphic symplectic geometry of elliptic surfaces",
@@ -475,7 +494,7 @@
       "appendixBy": null,
       "citation": "Algebraic Geometry (to appear).",
       "coauthors": "Masataka Iwai and Shin-ichi Matsumura",
-      "id": "paper-02",
+      "id": "paper-03",
       "links": [
         {
           "end": 173,
@@ -484,7 +503,7 @@
           "url": "https://arxiv.org/abs/2309.09489"
         }
       ],
-      "sourceOrder": 2,
+      "sourceOrder": 3,
       "sourceText": "(with Masataka Iwai and Shin-ichi Matsumura) Positivity of tangent sheaves of projective varieties -- the structure of MRC fibrations, Algebraic Geometry (to appear). [arXiv]",
       "status": "accepted",
       "title": "Positivity of tangent sheaves of projective varieties -- the structure of MRC fibrations",
@@ -494,7 +513,7 @@
       "appendixBy": null,
       "citation": "Journal of the LMS (2), 114 (2026), no. 1, Paper No. 170646.",
       "coauthors": "Zelong Chen and Sheng Meng",
-      "id": "paper-03",
+      "id": "paper-04",
       "links": [
         {
           "end": 216,
@@ -509,7 +528,7 @@
           "url": "https://arxiv.org/abs/2506.14274"
         }
       ],
-      "sourceOrder": 3,
+      "sourceOrder": 4,
       "sourceText": "(with Zelong Chen and Sheng Meng) On smooth rationally connected projective threefolds of Picard number two admitting int-amplified endomorphisms, Journal of the LMS (2), 114 (2026), no. 1, Paper No. 170646. [Journal][arXiv]",
       "status": "published",
       "title": "On smooth rationally connected projective threefolds of Picard number two admitting int-amplified endomorphisms",
@@ -519,7 +538,7 @@
       "appendixBy": null,
       "citation": "Indiana University Mathematics Journal, 74 (2025), no. 6, pp. 1561-1587.",
       "coauthors": "Tien-Cuong Dinh",
-      "id": "paper-04",
+      "id": "paper-05",
       "links": [
         {
           "end": 167,
@@ -534,7 +553,7 @@
           "url": "https://arxiv.org/abs/2312.02533"
         }
       ],
-      "sourceOrder": 4,
+      "sourceOrder": 5,
       "sourceText": "(with Tien-Cuong Dinh) Periodic points for meromorphic self-maps of Fujiki varieties, Indiana University Mathematics Journal, 74 (2025), no. 6, pp. 1561-1587. [Journal][arXiv]",
       "status": "published",
       "title": "Periodic points for meromorphic self-maps of Fujiki varieties",
@@ -544,7 +563,7 @@
       "appendixBy": null,
       "citation": "Forum of Mathematics, Sigma 13 (2025), Paper No. e18.",
       "coauthors": "Fei Hu",
-      "id": "paper-05",
+      "id": "paper-06",
       "links": [
         {
           "end": 147,
@@ -559,7 +578,7 @@
           "url": "https://arxiv.org/abs/2311.17759"
         }
       ],
-      "sourceOrder": 5,
+      "sourceOrder": 6,
       "sourceText": "(with Fei Hu) Canonical heights for abelian group actions of maximal dynamical rank, Forum of Mathematics, Sigma 13 (2025), Paper No. e18. [Journal][arXiv]",
       "status": "published",
       "title": "Canonical heights for abelian group actions of maximal dynamical rank",
@@ -569,7 +588,7 @@
       "appendixBy": "Jie Liu",
       "citation": "Mathematische Annalen 391 (2025), no. 2, pp. 1731-1752.",
       "coauthors": "Feng Shao",
-      "id": "paper-06",
+      "id": "paper-07",
       "links": [
         {
           "end": 199,
@@ -584,7 +603,7 @@
           "url": "https://arxiv.org/abs/2311.15559"
         }
       ],
-      "sourceOrder": 6,
+      "sourceOrder": 7,
       "sourceText": "(with Feng Shao) Bigness of tangent bundles and dynamical rigidity of Fano manifolds of Picard number 1 (with an appendix by Jie Liu), Mathematische Annalen 391 (2025), no. 2, pp. 1731-1752. [Journal][arXiv]",
       "status": "published",
       "title": "Bigness of tangent bundles and dynamical rigidity of Fano manifolds of Picard number 1",
@@ -594,7 +613,7 @@
       "appendixBy": null,
       "citation": "Journal of the Mathematical Society of Japan 77 (2025), no. 1, pp. 75-102.",
       "coauthors": "Jia Jia and Yongnam Lee",
-      "id": "paper-07",
+      "id": "paper-08",
       "links": [
         {
           "end": 180,
@@ -609,7 +628,7 @@
           "url": "https://arxiv.org/abs/2302.10077"
         }
       ],
-      "sourceOrder": 7,
+      "sourceOrder": 8,
       "sourceText": "(with Jia Jia and Yongnam Lee) Smooth projective surfaces with pseudo-effective tangent bundles, Journal of the Mathematical Society of Japan 77 (2025), no. 1, pp. 75-102. [Journal][arXiv]",
       "status": "published",
       "title": "Smooth projective surfaces with pseudo-effective tangent bundles",
@@ -619,7 +638,7 @@
       "appendixBy": null,
       "citation": "International Journal of Mathematics 35, no. 13, Paper No. 2450054 (2024).",
       "coauthors": "Juanyong Wang",
-      "id": "paper-08",
+      "id": "paper-09",
       "links": [
         {
           "end": 150,
@@ -634,7 +653,7 @@
           "url": "https://arxiv.org/abs/2112.03117"
         }
       ],
-      "sourceOrder": 8,
+      "sourceOrder": 9,
       "sourceText": "(with Juanyong Wang) Strictly nef divisors on singular threefolds, International Journal of Mathematics 35, no. 13, Paper No. 2450054 (2024). [Journal][arXiv]",
       "status": "published",
       "title": "Strictly nef divisors on singular threefolds",
@@ -644,7 +663,7 @@
       "appendixBy": null,
       "citation": "Journal of the LMS 109, no. 6, Article ID e12942, 26 p. (2024).",
       "coauthors": "Jie Liu, Wenhao Ou, Juanyong Wang, and Xiaokui Yang",
-      "id": "paper-09",
+      "id": "paper-10",
       "links": [
         {
           "end": 210,
@@ -659,7 +678,7 @@
           "url": "https://arxiv.org/abs/2111.05234"
         }
       ],
-      "sourceOrder": 9,
+      "sourceOrder": 10,
       "sourceText": "(with Jie Liu, Wenhao Ou, Juanyong Wang, and Xiaokui Yang) Algebraic fibre spaces with strictly nef relative anti-log canonical divisors, Journal of the LMS 109, no. 6, Article ID e12942, 26 p. (2024). [Journal][arXiv]",
       "status": "published",
       "title": "Algebraic fibre spaces with strictly nef relative anti-log canonical divisors",
@@ -669,7 +688,7 @@
       "appendixBy": null,
       "citation": "Journal of Algebra 639 (2024), pp. 678-707.",
       "coauthors": "Feng Shao",
-      "id": "paper-10",
+      "id": "paper-11",
       "links": [
         {
           "end": 144,
@@ -684,7 +703,7 @@
           "url": "https://arxiv.org/abs/2211.16380"
         }
       ],
-      "sourceOrder": 10,
+      "sourceOrder": 11,
       "sourceText": "(with Feng Shao) Boundedness of finite morphisms onto Fano manifolds with large Fano index, Journal of Algebra 639 (2024), pp. 678-707. [Journal][arXiv]",
       "status": "published",
       "title": "Boundedness of finite morphisms onto Fano manifolds with large Fano index",
@@ -694,7 +713,7 @@
       "appendixBy": null,
       "citation": "Mathematische Nachrichten 296 (2023), no. 7, pp. 3128-3135.",
       "coauthors": "",
-      "id": "paper-11",
+      "id": "paper-12",
       "links": [
         {
           "end": 202,
@@ -709,7 +728,7 @@
           "url": "https://arxiv.org/abs/2203.07243"
         }
       ],
-      "sourceOrder": 11,
+      "sourceOrder": 12,
       "sourceText": "Existence of the equivariant minimal model program for compact Kähler threefolds with the action of an abelian group of maximal rank, Mathematische Nachrichten 296 (2023), no. 7, pp. 3128-3135. [Journal][arXiv]",
       "status": "published",
       "title": "Existence of the equivariant minimal model program for compact Kähler threefolds with the action of an abelian group of maximal rank",
@@ -719,7 +738,7 @@
       "appendixBy": null,
       "citation": "manuscripta mathematica 172 (2023), pp. 567-598.",
       "coauthors": "Jia Jia",
-      "id": "paper-12",
+      "id": "paper-13",
       "links": [
         {
           "end": 115,
@@ -734,7 +753,7 @@
           "url": "https://arxiv.org/abs/2011.11239"
         }
       ],
-      "sourceOrder": 12,
+      "sourceOrder": 13,
       "sourceText": "(with Jia Jia) Amplified endomorphisms of Fano fourfolds, manuscripta mathematica 172 (2023), pp. 567-598. [Journal][arXiv]",
       "status": "published",
       "title": "Amplified endomorphisms of Fano fourfolds",
@@ -744,7 +763,7 @@
       "appendixBy": null,
       "citation": "Mathematical Research Letters 30 (2023), no. 2, pp. 589-610.",
       "coauthors": "Sheng Meng",
-      "id": "paper-13",
+      "id": "paper-14",
       "links": [
         {
           "end": 175,
@@ -759,7 +778,7 @@
           "url": "https://arxiv.org/abs/2005.03983"
         }
       ],
-      "sourceOrder": 13,
+      "sourceOrder": 14,
       "sourceText": "(with Sheng Meng) Rigidity of rationally connected smooth projective varieties from dynamical viewpoints, Mathematical Research Letters 30 (2023), no. 2, pp. 589-610. [Journal][arXiv]",
       "status": "published",
       "title": "Rigidity of rationally connected smooth projective varieties from dynamical viewpoints",
@@ -769,7 +788,7 @@
       "appendixBy": null,
       "citation": "Mathematische Annalen 383 (2022), no. 3-4, pp. 1567-1596.",
       "coauthors": "Sheng Meng and De-Qi Zhang",
-      "id": "paper-14",
+      "id": "paper-15",
       "links": [
         {
           "end": 149,
@@ -784,7 +803,7 @@
           "url": "https://arxiv.org/abs/2008.10295"
         }
       ],
-      "sourceOrder": 14,
+      "sourceOrder": 15,
       "sourceText": "(with Sheng Meng and De-Qi Zhang) Non-isomorphic endomorphisms of Fano threefolds, Mathematische Annalen 383 (2022), no. 3-4, pp. 1567-1596. [Journal][arXiv]",
       "status": "published",
       "title": "Non-isomorphic endomorphisms of Fano threefolds",
@@ -794,7 +813,7 @@
       "appendixBy": null,
       "citation": "International Mathematics Research Notices IMRN 2022, no. 15, pp. 11448-11483.",
       "coauthors": "Yohsuke Matsuzawa, Sheng Meng, Takahiro Shibata, and De-Qi Zhang",
-      "id": "paper-15",
+      "id": "paper-16",
       "links": [
         {
           "end": 211,
@@ -809,7 +828,7 @@
           "url": "https://arxiv.org/abs/2005.13368"
         }
       ],
-      "sourceOrder": 15,
+      "sourceOrder": 16,
       "sourceText": "(with Yohsuke Matsuzawa, Sheng Meng, Takahiro Shibata, and De-Qi Zhang) Invariant subvarieties with small dynamical degree, International Mathematics Research Notices IMRN 2022, no. 15, pp. 11448-11483. [Journal][arXiv]",
       "status": "published",
       "title": "Invariant subvarieties with small dynamical degree",
@@ -819,7 +838,7 @@
       "appendixBy": null,
       "citation": "Proceedings of the AMS 150 (2022), no. 1, pp. 55-68.",
       "coauthors": "",
-      "id": "paper-16",
+      "id": "paper-17",
       "links": [
         {
           "end": 140,
@@ -834,7 +853,7 @@
           "url": "https://arxiv.org/abs/2003.03760"
         }
       ],
-      "sourceOrder": 16,
+      "sourceOrder": 17,
       "sourceText": "Compact Kähler threefolds with the action of an abelian group of maximal rank, Proceedings of the AMS 150 (2022), no. 1, pp. 55-68. [Journal][arXiv]",
       "status": "published",
       "title": "Compact Kähler threefolds with the action of an abelian group of maximal rank",
@@ -844,7 +863,7 @@
       "appendixBy": null,
       "citation": "Asian Journal of Mathematics 25 (2021), no. 3, pp. 369-392.",
       "coauthors": "",
-      "id": "paper-17",
+      "id": "paper-18",
       "links": [
         {
           "end": 122,
@@ -865,7 +884,7 @@
           "url": "https://link.intlpress.com/JDetail/1842263949989429249"
         }
       ],
-      "sourceOrder": 17,
+      "sourceOrder": 18,
       "sourceText": "Int-amplified endomorphisms of compact Kähler spaces, Asian Journal of Mathematics 25 (2021), no. 3, pp. 369-392. [Journal][arXiv][Addendum]",
       "status": "published",
       "title": "Int-amplified endomorphisms of compact Kähler spaces",
@@ -875,7 +894,7 @@
       "appendixBy": null,
       "citation": "Journal of Geometric Analysis 31 (2021), no. 3, pp. 2568-2593.",
       "coauthors": "",
-      "id": "paper-18",
+      "id": "paper-19",
       "links": [
         {
           "end": 161,
@@ -890,7 +909,7 @@
           "url": "https://arxiv.org/abs/1905.05362"
         }
       ],
-      "sourceOrder": 18,
+      "sourceOrder": 19,
       "sourceText": "Totally invariant divisors of int-amplified endomorphisms of normal projective varieties, Journal of Geometric Analysis 31 (2021), no. 3, pp. 2568-2593. [Journal][arXiv]",
       "status": "published",
       "title": "Totally invariant divisors of int-amplified endomorphisms of normal projective varieties",
@@ -900,7 +919,7 @@
       "appendixBy": null,
       "citation": "submitted.",
       "coauthors": "Sheng Meng",
-      "id": "paper-19",
+      "id": "paper-20",
       "links": [
         {
           "end": 98,
@@ -909,7 +928,7 @@
           "url": "https://arxiv.org/abs/2408.00566"
         }
       ],
-      "sourceOrder": 19,
+      "sourceOrder": 20,
       "sourceText": "(with Sheng Meng) Kawaguchi-Silverman conjecture for int-amplified endomorphism, submitted. [arXiv]",
       "status": "preprint",
       "title": "Kawaguchi-Silverman conjecture for int-amplified endomorphism",
@@ -919,7 +938,7 @@
       "appendixBy": null,
       "citation": "submitted.",
       "coauthors": "Shin-ichi Matsumura",
-      "id": "paper-20",
+      "id": "paper-21",
       "links": [
         {
           "end": 124,
@@ -928,29 +947,10 @@
           "url": "https://arxiv.org/abs/2609.09869v1"
         }
       ],
-      "sourceOrder": 20,
+      "sourceOrder": 21,
       "sourceText": "(with Shin-ichi Matsumura) Positivity of compact Kähler varieties admitting an int-amplified endomorphism, submitted. [arXiv]",
       "status": "preprint",
       "title": "Positivity of compact Kähler varieties admitting an int-amplified endomorphism",
-      "year": null
-    },
-    {
-      "appendixBy": null,
-      "citation": "submitted.",
-      "coauthors": "Shin-ichi Matsumura",
-      "id": "paper-21",
-      "links": [
-        {
-          "end": 116,
-          "label": "arXiv",
-          "start": 111,
-          "url": "https://arxiv.org/abs/2609.07069v1"
-        }
-      ],
-      "sourceOrder": 21,
-      "sourceText": "(with Shin-ichi Matsumura) A note on compact Kähler varieties with pseudo-effective tangent sheaf, submitted. [arXiv]",
-      "status": "preprint",
-      "title": "A note on compact Kähler varieties with pseudo-effective tangent sheaf",
       "year": null
     },
     {
@@ -973,7 +973,7 @@
       "text": "My research interests lie primarily in complex algebraic geometry and its interaction with dynamics."
     }
   ],
-  "retrieved": "2026-10-15",
+  "retrieved": "2026-10-27",
   "source": "https://sites.google.com/view/guoleizhongshomepage/home",
   "talkSections": [
     {
